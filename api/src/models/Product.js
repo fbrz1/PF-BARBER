@@ -6,19 +6,13 @@ module.exports = (sequelize) => {
   sequelize.define(
     "product",
     {
-      id: {
-        type: DataTypes.INTEGER,
-        autoIncrement: true,
-        allowNull: false,
-        primaryKey: true,
-      },
       name: {
         type: DataTypes.STRING,
         allowNull: false,
       },
       description: {
         type: DataTypes.TEXT,
-        allowNull: false,
+        defaultValue: "",
       },
       price: {
         type: DataTypes.INTEGER,
@@ -39,6 +33,7 @@ module.exports = (sequelize) => {
         type: DataTypes.INTEGER,
         defaultValue: 0,
       },
+
       image: {
         type: DataTypes.TEXT,
         allowNull: false,
@@ -46,10 +41,17 @@ module.exports = (sequelize) => {
           "https://consumercomplaintscourt.com/wp-content/uploads/2015/12/no_uploaded.png",
       },
       score: {
+
+        type: DataTypes.INTEGER,
+        defaultValue: 1,
+        validate: { min: 1, max: 5 }
+      }
+
         type: DataTypes.ENUM(["0", "1", "2", "3", "4", "5"]),
         allowNull: false,
         defaultValue: "0",
       },
+
     },
     {
       timestamp: false,
