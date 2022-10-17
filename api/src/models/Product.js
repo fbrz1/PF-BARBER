@@ -47,11 +47,6 @@ module.exports = (sequelize) => {
         validate: { min: 1, max: 5 }
       }
 
-        type: DataTypes.ENUM(["0", "1", "2", "3", "4", "5"]),
-        allowNull: false,
-        defaultValue: "0",
-      },
-
     },
     {
       timestamp: false,
