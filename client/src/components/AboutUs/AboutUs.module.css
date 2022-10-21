@@ -1,18 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Caveat&family=Indie+Flower&family=Noto+Sans:wght@200&display=swap');
 
-.background{
-    background-color: rgba(32, 30, 29, 0.747);
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: absolute;
-    margin: 0% 0%;
-    text-align: center;
-    background-position-x: center;
-    width: 100%;
-    height: 100%;
 
-
-}
 .title{
     margin-top: 20px;
     font-size: 40px;

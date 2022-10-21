@@ -66,6 +66,7 @@ export default function Register() {
 console.log(formik)
     return (
         <>
+        <div className={styles.background}>
         <div className={styles.conteiner}>
             <h1>Create Account</h1>
             <form onSubmit={formik.handleSubmit}>
@@ -147,8 +148,9 @@ console.log(formik)
                 </div><br />
 
                 <button type='submit' onChange={formik.handleChange} onBlur={formik.handleBlur} class="btn btn-primary btn-lg btn-block"> Submit</button>
+                
             </form>
-
+            </div>
             </div>
         </>
 
