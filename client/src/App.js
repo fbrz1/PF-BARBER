@@ -4,15 +4,15 @@ import DetailProduct from "./components/DetailProducts/DetailProducts";
 import Ecommerce from "./components/Ecommerce/Ecommerce";
 import Home from "./components/Home/Home.jsx";
 import AboutUs from "./components/AboutUs/AboutUs.jsx";
-
-
+import { LoginButton } from "./components/Auth0/Auth0.jsx";
+import { LogoutButton } from "./components/Auth0/Auth0.jsx";
+import { useAuth0 } from "@auth0/auth0-react";
 
 // import MercadoPago from "./components/MercadoPago/MercadoPago";
 
 import Register from "./components/Register/Register.jsx";
 import LoginUser from "./components/LoginUser/LoginUser";
-import { CartProvider } from "./components/Shopping/ShoppingCart"
-
+import { CartProvider } from "./components/Shopping/ShoppingCart";
 
 import "./App.css";
 
@@ -25,47 +25,47 @@ import "./App.css";
 //holi
 
 function App() {
+  const { isAuthenticated } = useAuth0();
   return (
     <CartProvider>
-    <div className="App">
-      <Route exact path="/">
-        <Home />
-      </Route>
-      <Route exact path="/register">
-        <Register />
-      </Route>
+      <div className="App">
+        <Route exact path="/">
+          <Home />
+        </Route>
+        <Route exact path="/register">
+          <Register />
+        </Route>
 
-      <Route exact path="/login">
-        <LoginUser />
-      </Route>
+        <Route exact path="/login">
+          <LoginUser />
+        </Route>
 
-      <Route exact path="/shop">
-        <Ecommerce />
-      </Route>
-      <Route exact path="/aboutus">
-        <AboutUs />
-      </Route>
+        <Route exact path="/shop">
+          <Ecommerce />
+        </Route>
+        <Route exact path="/aboutus">
+          <AboutUs />
+        </Route>
 
-
-      {/* <Route exact path="/payments/pay">
+        {/* <Route exact path="/payments/pay">
         <MercadoPago />
       </Route> */}
 
-      <Route exact path="/product/:id"
-        render={({match}) => {
-          return <DetailProduct match={match} />
-        }}>
-      </Route>
-      <Route
-        exact
-        path="/product/:id"
-        render={({ match }) => {
-          return <DetailProduct match={match} />;
-        }}
-      ></Route>
-
-
-    </div>
+        <Route
+          exact
+          path="/product/:id"
+          render={({ match }) => {
+            return <DetailProduct match={match} />;
+          }}
+        ></Route>
+        <Route
+          exact
+          path="/product/:id"
+          render={({ match }) => {
+            return <DetailProduct match={match} />;
+          }}
+        ></Route>
+      </div>
     </CartProvider>
   );
 }

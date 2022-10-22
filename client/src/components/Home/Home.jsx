@@ -3,12 +3,26 @@ import { Link } from "react-router-dom";
 import Carrusel from "../carrusel/carrusel";
 import styles from "./Home.module.css";
 import { Button } from "reactstrap";
+import { LoginButton } from "../Auth0/Auth0";
+import { LogoutButton } from "../Auth0/Logout";
+import { Profile } from "../Auth0/Profile"
+import { useAuth0 } from "@auth0/auth0-react";
+
 export default function Home() {
+  const { isAuthenticated } = useAuth0();
   return (
     <div className={styles.background}>
       <div className={styles.title}><h1>BARBER 'S APP</h1>
+     
     
       <Carrusel /><br /></div>
+      {isAuthenticated ? <>
+        <LogoutButton />
+        <Profile />
+      
+      </> : <LoginButton />}
+      
+
   
       <div className={styles.buttonLinks}>
 

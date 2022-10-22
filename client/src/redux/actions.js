@@ -18,19 +18,18 @@ export const GET_DETAILPRODUCT = "GET_DETAILPRODUCT";
 export const FILTER_QUALITY = "FILTER_QUALITY";
 export const FILTER_SHOP = "FILTER_SHOP";
 
-export const ADD_TO_CART = 'ADD_TO_CART';
+export const ADD_TO_CART = "ADD_TO_CART";
 export const SUBTRACT_FROM_CART = "SUBTRACT_FROM_CART";
 export const REMOVE_ITEM_FROM_CART = "REMOVE_ITEM_FROM_CART";
 export const CLEAR_CART = "CLEAR_CART";
 export const GET_LOCALSTORAGE = "GET_LOCALSTORAGE";
-export const ADD_LOCALSTORAGE = "ADD_LOCALSTORAGE"
+export const ADD_LOCALSTORAGE = "ADD_LOCALSTORAGE";
 
 export const GET_PAYMENTS = "GET_PAYMENTS";
 
 // export const SORT_SCORE ="SORT_SCORE";
 // export const SCORE_LOWER = "SCORE_LOWER"
 // export const SCORE_HIGH = "SCORE_HIGH"
-
 
 export function setLoading(value) {
   return (dispatch) => {
@@ -167,6 +166,7 @@ export function getProductsDetail(id, errorCallback) {
     try {
       const response = await axios.get(`/products/${id}`); //chequeada con yei-barbi
       if (response?.data) {
+        console.log(response.data);
         dispatch({ type: GET_DETAILPRODUCT, payload: response.data });
       }
     } catch (error) {
@@ -236,15 +236,14 @@ export function filterShop(payload) {
 //   };
 // }
 
-
 //actions for delete & add ----> IMAGES
 // falta ruta delete y post de imagenes
 
 export function addToCart(product) {
   return {
     type: ADD_TO_CART,
-    payload: product
-  }
+    payload: product,
+  };
 }
 
 export function delFromCart(product, all = false) {
@@ -253,41 +252,35 @@ export function delFromCart(product, all = false) {
   } else {
     return { type: SUBTRACT_FROM_CART, payload: product };
   }
-};
+}
 
 export function clearCart() {
   return {
     type: CLEAR_CART,
-
-  }
+  };
 }
 export function getLocalStorage() {
   return {
     type: GET_LOCALSTORAGE,
-  }
+  };
 }
 
 export function addLocalStorage(id) {
   return {
     type: ADD_LOCALSTORAGE,
-    payload: id
-  }
+    payload: id,
+  };
 }
 
-
-
-  
-
-  export function getPaymentLink() {
-    return async (dispatch) => {
-      try {
-        const response = await axios.get(`/payments/pay`); 
-        if (response?.data) {
-          dispatch({ type: GET_PAYMENTS, payload: response.data });
-        }
-      } catch (error) {
-        console.log(error);
+export function getPaymentLink() {
+  return async (dispatch) => {
+    try {
+      const response = await axios.get(`/payments/pay`);
+      if (response?.data) {
+        dispatch({ type: GET_PAYMENTS, payload: response.data });
       }
-    };
-  }
-
+    } catch (error) {
+      console.log(error);
+    }
+  };
+}
