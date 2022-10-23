@@ -25,7 +25,6 @@ export default function Register() {
             password: "",
             phone: "",
             user: "",
-            genre: "",
 
         },
 
@@ -142,13 +141,6 @@ if(cookies.get('token')) {
                     {/* <label><input type='radio' id="genre" name='genre' value='man'/>Men</label> 
                    <label><input type='radio' id="genre" name='genre' value='woman'/>Woman</label>
                     <label><input type='radio' id="genre" name='genre' value='binarie' />Non-binary</label>  */}
-
-                    <select id="genre" name='genre' onChange={formik.handleChange}
-                        onBlur={formik.handleBlur}  value={formik.values.genre}>
-                        <option type="string" id="genre" name='genre'  value='man'>Men</option>
-                        <option type="string" id="genre" name='genre'  value='woman'>Woman</option>
-                        <option type="string" id="genre" name='genre'  value='binarie'>Non-binary</option>
-                    </select>
 
                     {/* <input id="genre" name="genre" type="string" placeholder='genre'
                         onChange={formik.handleChange}
