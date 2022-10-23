@@ -3,11 +3,19 @@ import axios from 'axios';
 import { useFormik } from 'formik';
 import { useHistory } from 'react-router-dom';
 import * as Yup from "yup"
+import Cookies from 'universal-cookie';
+import  { Redirect } from 'react-router-dom'
+
 
 import styles from '../LoginUser/LoginUser.module.css'
 
 export default function LoginUser() {
     const history = useHistory();
+
+    let axiosConfig = {
+        withCredentials: true,
+      }
+
 
     const formik = useFormik({
         initialValues: {
@@ -25,7 +33,7 @@ export default function LoginUser() {
 
             password: Yup.string()
                 .required('No password provided.')
-                .min(8, 'Password is too short - should be 8 chars minimum.')
+                .min(2, 'Password is too short - should be 8 chars minimum.')
                 .max(15, "Must be between 8 and 15 character"),
 
 
@@ -37,12 +45,18 @@ export default function LoginUser() {
         onSubmit: async (values) => {
 
             console.log(values)
-            await axios.post('http://localhost:3001/auth/login', values)
+            await axios.post('http://localhost:3001/auth/login', values).then(cred=> document.cookie = `token=${cred.data.data}; max-age=${500*500}; path=/; samesite=strict`
+            )
 
             history.push('/')
         }
     })
 
+    const cookies = new Cookies()
+
+if(cookies.get('token')) {
+    return <Redirect to='/'  />
+} else {
     return (
         <>
 
@@ -82,6 +96,9 @@ export default function LoginUser() {
 
 
                 </form>
+                <div>
+        <h1>Hola soy la cookie JWT {cookies.get('token')}</h1>
+      </div>
 
             </div>
 
@@ -91,4 +108,5 @@ export default function LoginUser() {
 
 
     )
+}
 }

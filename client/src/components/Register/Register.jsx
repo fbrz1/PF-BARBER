@@ -4,12 +4,17 @@ import { useFormik, yupToFormErrors } from 'formik';
 import { useHistory } from 'react-router-dom';
 import * as Yup from "yup"
 import styles from '../Register/Register.module.css';
+import Cookies from 'universal-cookie';
+import  { Redirect } from 'react-router-dom'
+
 
 export default function Register() {
     const history = useHistory();
     const phoneRegex = RegExp(
         /^((\+|)[0-9]{1,3}(-|\s)[0-9]{2,4}(-|\s)[0-9]{6,8})$/,
     );
+
+    const cookies = new Cookies()
 
 
     const formik = useFormik({
@@ -64,6 +69,11 @@ export default function Register() {
 
     })
 console.log(formik)
+
+if(cookies.get('token')) {
+    return <Redirect to='/'  />
+} else {
+
     return (
         <>
         <div className={styles.background}>
@@ -156,4 +166,5 @@ console.log(formik)
 
         // john
     )
+}
 }
