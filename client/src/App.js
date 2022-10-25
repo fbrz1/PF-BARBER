@@ -33,16 +33,16 @@ function App() {
       </Route>
 
       <Route exact path = "/dash">
-      <Dashboard />
+      <Dashboard/>
       </Route>
 
       {/* <Route path="/" render={({ location }) => {
         return <HomeNavBar user={user} pathname={location.pathname} />
       }}> </Route> */}
 
-<Route path = "/">
+{/* <Route path = "/">
       <HomeNavBar />
-      </Route>
+      </Route> */}
 
     </div>
   );
