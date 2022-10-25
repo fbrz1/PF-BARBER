@@ -19,7 +19,7 @@ export default function HomeNavBar({ user, pathname }) {
                     <ul className="navbar-nav d-flex flex-row">
                         <li className="nav-item me-3 me-lg-0">
                             {/* <span>{userId ? " Welcome " + Object.keys(user).length ? user.name : "" + " 👋" : "Welcome to Barber"}</span> */}
-                        <span>Welcome user!</span>
+                          
                         </li>
                     </ul>
 
@@ -46,17 +46,19 @@ export default function HomeNavBar({ user, pathname }) {
                         </li>}
 
                        {/* {/*--------- register---------- */}
-                       {/* {!userId && <li className="nav-item me-3 me-lg-0">
+                        {/* {!userId && <li className="nav-item me-3 me-lg-0">
                             <Link to="/register">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" style={{ margin: "10px" }} className="bi bi-person-plus" viewBox="0 0 16 16">
                                     <path d="M6 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H1s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C9.516 10.68 8.289 10 6 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z" />
                                     <path d="M13.5 5a.5.5 0 0 1 .5.5V7h1.5a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0V8h-1.5a.5.5 0 0 1 0-1H13V5.5a.5.5 0 0 1 .5-.5z" />
                                 </svg></Link> */}
 
-                       {/* </li>}
+                        {/* </li>}
+
+
+
+
                         {/*--------- back to home---------- */}
-
-
                         {pathname !== '/' && <li className="nav-item me-3 me-lg-0">
                             <Link to="/">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" style={{ margin: "10px" }} className="bi bi-house-door" viewBox="0 0 16 16">
@@ -64,8 +66,16 @@ export default function HomeNavBar({ user, pathname }) {
                                 </svg></Link>
 
                         </li>}
-                        <li className="nav-item me-3 me-lg-0 dropdown">
+                        {/*--------- user---------- */}
+                        <li className="nav-item me-3 me-lg-0">
+                            <Link to="/register">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" style={{ margin: "10px" }} class="bi bi-person" viewBox="0 0 16 16">
+                                    <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z" />
+                                </svg>
+                            </Link>
 
+                        </li>
+                        <li className="nav-item me-3 me-lg-0 dropdown">
                             <Link to="/cart">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" style={{ margin: "10px" }} className="bi bi-cart-check" viewBox="0 0 16 16">
                                     <path d="M11.354 6.354a.5.5 0 0 0-.708-.708L8 8.293 6.854 7.146a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0l3-3z" />
