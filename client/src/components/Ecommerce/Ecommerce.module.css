@@ -49,6 +49,16 @@
   padding: 10px;
 }
 
+.divStyle {
+  border: 3px solid black;
+  margin-top: 1rem;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-bottom: 30px;
+  border-radius: 20px;
+  background-color: cornsilk;
+}
+
 .productPrice {
   font-weight: 800;
   font-family: "Open Sans", sans-serif;
@@ -168,4 +178,17 @@ select::-ms-expand {
 
 .select {
   width: 7%;
+}
+.pag{
+  
+    display:flex;
+    justify-content: center;
+  }
+.selectors{
+  display: flex;
+  justify-content:center;
+  margin-top: 25px;
+}
+.select{
+  width:15px;
 }
