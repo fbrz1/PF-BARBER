@@ -1,6 +1,6 @@
 
 import React from 'react';
-
+import '../assets/css/black-dashboard.css';
 
 
 export default function Dashboard(){
