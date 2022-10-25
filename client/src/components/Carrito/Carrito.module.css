@@ -1,0 +1,61 @@
+.container{
+    max-width:95%;
+    width:90%;
+    list-style-type:none;
+    margin:20px auto;
+  
+    padding-right: 2rem;
+    background-color:#eee;
+
+    /*Flexbox setup*/
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.containerItem{
+    max-width:95%;
+    width:1380px;
+    list-style-type:none;
+    margin:20px auto;
+
+    background-color:#eee;
+
+    /*Flexbox setup*/
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+
+
+
+}
+
+.tamanoimg{
+    max-width:150px;
+    max-height: 100px;
+    margin-right: -4rem;
+    margin-left: -4rem;
+
+    
+}
+
+.text{
+    border-collapse: collapse;
+    
+    width: 150px;
+    
+    
+    
+}
+h5{
+    padding-left: 2rem;
+}
+
+.price{
+    margin-left: -2rem;
+   padding: auto;
+
+}
