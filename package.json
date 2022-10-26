@@ -1,5 +1,11 @@
 {
   "dependencies": {
-    "formik": "^2.2.9"
+    "@emotion/react": "^11.10.4",
+    "@emotion/styled": "^11.10.4",
+    "@mui/icons-material": "^5.10.9",
+    "@mui/material": "^5.10.11",
+    "formik": "^2.2.9",
+    "react-router-dom": "^6.4.2",
+    "sass": "^1.55.0"
   }
 }

@@ -1,5 +1,6 @@
 import React from 'react'
 import "../Home/Home.scss"
+import NavbarDash from '../Navbar/Navbar'
 import Sidebar from '../Sidebar/Sidebar'
 import Widget from '../Widget/Widget'
 
@@ -10,6 +11,7 @@ function HomeDash() {
 
     <div className='home'>
       <Sidebar />
+
       <div className="homeContainer">
         container
         <div className="widgets">
@@ -19,6 +21,14 @@ function HomeDash() {
           <Widget type = "balance"/>
         </div>
         {/* container aca iria navbar */}
+
+      <div className="homeContainer"> 
+        {/* container */}
+
+        <NavbarDash/>
+       Welcome
+      </div>
+
       </div>
     </div>
   )
