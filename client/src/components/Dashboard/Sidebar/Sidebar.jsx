@@ -17,7 +17,7 @@ function Sidebar() {
   return (
     <div className='sidebar'>
         <div className='top'><span className='logo'>logo</span></div>
-        <hr></hr>
+       
         <div className='center'>
             <ul>
                 <p className="title">MAIN</p>
