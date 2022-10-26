@@ -10,7 +10,7 @@ import Register from "./components/Register/Register.jsx";
 import LoginUser from "./components/LoginUser/LoginUser";
 import { CartContext } from "./components/Shopping/ShoppingCart";
 import { getDBUser } from "./redux/actions";
-
+import Dashboard from "./components/Dashboard/Dashboard.jsx";
 import HomeNavBar from "./components/HomeNavBar/HomeNavBar"
 
 import "./App.css";
@@ -43,6 +43,10 @@ function App() {
         return <HomeNavBar user={user} pathname={location.pathname} />
       }}>
 
+      </Route>
+
+      <Route exact path="/dash">
+        <Dashboard />
       </Route>
 
       <Route exact path="/">
