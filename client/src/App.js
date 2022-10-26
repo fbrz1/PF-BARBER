@@ -14,7 +14,7 @@ import Dashboard from "./components/Dashboard/Dashboard.jsx";
 import List from "./components/Dashboard/List/List.jsx"
 
 import HomeNavBar from "./components/HomeNavBar/HomeNavBar"
-
+import Products from "./components/Dashboard/Products/Products.jsx"
 import "./App.css";
 import ItemCart from "./components/FullCart/FullCart";
 
@@ -40,14 +40,19 @@ function App() {
   }, [user])
   return (
     <div className="App">
-{!URLactual.pathname.includes("/dash") ?     <Route path="/" render={({ location }) => {
+      {!URLactual.pathname.includes("/dash") ? <Route path="/" render={({ location }) => {
         return <HomeNavBar user={user} pathname={location.pathname} />
       }}>
 
-      </Route>: null}
+      </Route> : null}
 
       <Route exact path="/dash/users">
-      <List/>
+        <List />
+      </Route>
+      <Route exact path="/dash/products">
+
+              <Products/>
+        
       </Route>
 
       <Route exact path="/">
