@@ -1,5 +1,13 @@
 .navbarbuttons{
-    margin-right: 70%;
-    margin: 20%;
-    padding-top: 15%;
+
+    display: flex;
+    margin-bottom:-4rem;
+    list-style: none;
+
+    
+
+}
+
+.title{
+    padding-top:3.8rem;
 }
