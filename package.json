@@ -6,6 +6,7 @@
     "@mui/material": "^5.10.11",
     "formik": "^2.2.9",
     "react-router-dom": "^6.4.2",
+    "recharts": "^2.1.15",
     "sass": "^1.55.0"
   }
 }
