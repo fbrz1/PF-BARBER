@@ -7,6 +7,7 @@ import Featured from '../Featured/Featured'
 import Chart from '../Chart/Chart'
 
 
+
 function HomeDash() {
   return (
 
@@ -31,6 +32,7 @@ function HomeDash() {
           <div className="listTitle">Latest Transactions</div>
         </div>
 
+     
       </div>
     </div>
   )
