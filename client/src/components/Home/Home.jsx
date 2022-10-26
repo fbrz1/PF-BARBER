@@ -10,7 +10,7 @@ import {
   getDBCart,
 } from "../../redux/actions";
 import { useSelector, useDispatch } from 'react-redux'
-
+import HomeNavBar from "../HomeNavBar/HomeNavBar";
 
 
 export default function Home() {
@@ -26,7 +26,9 @@ export default function Home() {
   
   return (
     <div className={styles.background}>
+
        
+
       <div className={styles.title}><h1>BARBER 'S APP</h1>
     
       <Carrusel /><br /></div>

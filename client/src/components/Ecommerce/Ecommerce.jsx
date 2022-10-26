@@ -21,6 +21,8 @@ import {
 } from "../../redux/actions";
 import SearchBar from "../SearchBar/SearchBar.jsx";
 import { Link } from "react-router-dom";
+import HomeNavBar from "../HomeNavBar/HomeNavBar";
+
 
 const Ecommerce = ({
   //-------> props
@@ -102,7 +104,7 @@ const Ecommerce = ({
   return (
     <div>
       <div>
-
+     
 
 
         {/* ---------------Searchbar--------------- */}

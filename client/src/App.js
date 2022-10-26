@@ -47,12 +47,22 @@ function App() {
 
       </Route>
 
+
       <Route exact path="/">
         <Home />
       </Route>
       <Route exact path="/dash">
         <Dashboard />
       </Route>
+
+      <Route exact path="/dash">
+        <Dashboard />
+      </Route>
+
+      <Route exact path="/">
+        <Home />
+      </Route>
+
       <Route exact path="/register">
         <Register />
       </Route>
