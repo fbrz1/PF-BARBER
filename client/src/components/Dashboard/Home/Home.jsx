@@ -12,21 +12,19 @@ function HomeDash() {
     <div className='home'>
       <Sidebar />
 
-      <div className="homeContainer">
-        container
-        <div className="widgets">
+      <div className="homeContainer">     
+      <NavbarDash/>
+        <div className="widgets"> 
+        
+   
           <Widget type = "user"/>
           <Widget type = "order"/>
           <Widget type = "earning"/>
           <Widget type = "balance"/>
         </div>
-        {/* container aca iria navbar */}
 
       <div className="homeContainer"> 
-        {/* container */}
-
-        <NavbarDash/>
-       Welcome
+       
       </div>
 
       </div>
