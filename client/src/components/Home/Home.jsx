@@ -4,6 +4,7 @@ import Carrusel from "../carrusel/carrusel";
 import styles from "./Home.module.css";
 import { Button } from "reactstrap";
 import { CartContext } from "../Shopping/ShoppingCart";
+
 import {
   getDBUser,
   getDBCart,
@@ -14,6 +15,7 @@ import HomeNavBar from "../HomeNavBar/HomeNavBar";
 
 export default function Home() {
 
+  
   const { userId } = useContext(CartContext)
   const dispatch = useDispatch()
     useEffect(() => {
@@ -25,7 +27,9 @@ export default function Home() {
   
   return (
     <div className={styles.background}>
-      
+
+       
+
       <div className={styles.title}><h1>BARBER 'S APP</h1>
     
       <Carrusel /><br /></div>

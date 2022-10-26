@@ -11,6 +11,8 @@ import LoginUser from "./components/LoginUser/LoginUser";
 import { CartContext } from "./components/Shopping/ShoppingCart";
 import { getDBUser } from "./redux/actions";
 import Dashboard from "./components/Dashboard/Dashboard.jsx";
+import List from "./components/Dashboard/List/List.jsx"
+
 import HomeNavBar from "./components/HomeNavBar/HomeNavBar"
 
 import "./App.css";
@@ -23,7 +25,7 @@ import ItemCart from "./components/FullCart/FullCart";
 // Top level App component
 //import { ProvideAuth } from "./use-auth.js";
 //holi
-
+var URLactual = window.location;
 
 
 
@@ -38,16 +40,24 @@ function App() {
   }, [user])
   return (
     <div className="App">
-
-      <Route path="/" render={({ location }) => {
+{!URLactual.pathname.includes("/dash") ?     <Route path="/" render={({ location }) => {
         return <HomeNavBar user={user} pathname={location.pathname} />
       }}>
 
+      </Route>: null}
+
+      <Route exact path="/dash/users">
+      <List/>
       </Route>
 
+      <Route exact path="/">
+        <Home />
+      </Route>
       <Route exact path="/dash">
         <Dashboard />
       </Route>
+
+
 
       <Route exact path="/">
         <Home />
