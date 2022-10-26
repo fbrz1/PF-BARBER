@@ -8,6 +8,8 @@ import ShoppingCart from "./components/Shopping/ShoppingCart";
 import AboutUs from "./components/AboutUs/AboutUs.jsx";
 import Dashboard from "./components/Dashboard/Dashboard.jsx";
 import HomeNavBar from "./components/HomeNavBar/HomeNavBar.jsx";
+import Register from "./components/Register/Register.jsx";
+import LoginUser from "./components/LoginUser/LoginUser";
 
 import "./App.css";
 //holi
@@ -25,6 +27,14 @@ function App() {
         <AboutUs />
       </Route>
 
+      <Route exact path="/register">
+          <Register />
+        </Route>
+
+        <Route exact path="/login">
+          <LoginUser />
+        </Route>
+
       <Route
         exact
         path="/product/:id"
@@ -41,9 +51,9 @@ function App() {
         return <HomeNavBar user={user} pathname={location.pathname} />
       }}> </Route> */}
 
-      {/* <Route path = "/">
+      <Route path = "/">
       <HomeNavBar />
-      </Route> */}
+      </Route>
     </div>
   );
 }
