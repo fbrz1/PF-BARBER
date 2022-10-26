@@ -29,7 +29,10 @@ function HomeDash() {
           <Chart/>
         </div>
 
-       
+        <div className="listConteiner">
+          <div className="listTitle">Store</div>
+              <Table/>
+        </div>
     
 
 
