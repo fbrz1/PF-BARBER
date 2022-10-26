@@ -27,6 +27,9 @@ function HomeDash() {
           <Featured />
           <Chart/>
         </div>
+        <div className="listContainer">
+          <div className="listTitle">Latest Transactions</div>
+        </div>
 
       </div>
     </div>
