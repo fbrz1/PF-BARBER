@@ -19,7 +19,8 @@ import {
   REMOVE_ITEM_FROM_CART,
   CLEAR_CART,
   GET_LOCALSTORAGE,
-  GET_PAYMENTS
+  GET_PAYMENTS,
+  ADD_PROD,
 
 } from "./actions";
 
@@ -66,6 +67,10 @@ export default function reducer(state = initialState, { type, payload, quantity 
     case SEARCH_PRODUCTS:
       return { ...state, products: payload };
 
+case ADD_PROD:
+            return {
+                ...state,
+            };
     //--------------------------SCORE
     // case SORT_SCORE:
     // const sortScore = state.products
