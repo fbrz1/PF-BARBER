@@ -12,7 +12,7 @@ import { CartContext } from "./components/Shopping/ShoppingCart";
 import { getDBUser } from "./redux/actions";
 import Dashboard from "./components/Dashboard/Dashboard.jsx";
 import List from "./components/Dashboard/List/List.jsx"
-
+import Single from "./components/Dashboard/Single/Single.jsx";
 import HomeNavBar from "./components/HomeNavBar/HomeNavBar"
 import Products from "./components/Dashboard/Products/Products.jsx"
 import "./App.css";
@@ -59,6 +59,9 @@ function App() {
         <Dashboard />
       </Route>
 
+      <Route exact path="/dash/users/iduser">
+        <Single />
+      </Route>
 
 
       <Route exact path="/">
