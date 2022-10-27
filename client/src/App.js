@@ -17,6 +17,8 @@ import HomeNavBar from "./components/HomeNavBar/HomeNavBar"
 import Products from "./components/Dashboard/Products/Products.jsx"
 import "./App.css";
 import ItemCart from "./components/FullCart/FullCart";
+import New from "./components/Dashboard/UploadFiles/UploadFiles";
+import { inputs } from "./components/Dashboard/UploadFiles/formSource";
 
 //import { createProducts, getProducts } from "./store/actions";
 //import ShoppingCart from "./components/Shopping/ShoppingCart";
@@ -58,8 +60,9 @@ function App() {
       <Route exact path="/dash">
         <Dashboard />
       </Route>
-
-
+      <Route exact path = "/dash/products/add">
+        <New inputs ={inputs} title = "Add new product"/>
+       </Route>
 
       <Route exact path="/">
         <Home />
