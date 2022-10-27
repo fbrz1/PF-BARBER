@@ -4,10 +4,18 @@
     margin-bottom:-4rem;
     list-style: none;
 
-    
+ 
 
 }
 
 .title{
     padding-top:3.8rem;
 }
+
+
+.background{
+    background: linear-gradient(to right, rgba(192, 160, 160, 0.815), rgb(206, 206, 219));
+}
+
+
+
