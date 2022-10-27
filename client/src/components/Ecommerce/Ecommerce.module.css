@@ -84,6 +84,7 @@ select::-ms-expand {
 .button {
   display: inline-block;
   margin-top: 10px;
+  margin-left: 30px;
   padding: 10px 0;
   background-color: #026773;
   text-align: center;
@@ -171,6 +172,7 @@ select::-ms-expand {
   border: none;
 } */
 
+
 .selectFilterSort {
   margin-top: 15px;
   justify-content: space-around;
@@ -179,16 +181,17 @@ select::-ms-expand {
 .select {
   width: 7%;
 }
-.pag{
-  
-    display:flex;
-    justify-content: center;
-  }
-.selectors{
+.paginado{
   display: flex;
-  justify-content:center;
-  margin-top: 25px;
+  justify-content: center;
 }
-.select{
-  width:15px;
+
+.selectors{
+  margin-top:10px;
+  display: flex;
+  justify-content: center;
+
+}
+.links{
+  margin-right: 2px;
 }

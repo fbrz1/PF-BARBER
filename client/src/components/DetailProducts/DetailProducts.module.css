@@ -18,3 +18,51 @@
     background-color: aqua;
     transition: 500ms;
   }
+  .name{
+    margin-top: 15px;
+    font-size: 50px;
+    text-transform: uppercase;
+    color:rgb(48, 48, 110);
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif
+  }
+  .price{
+    text-transform: uppercase;
+    justify-content: flex-start;
+
+  }
+  .quality{
+    text-transform: uppercase;
+  }
+  .img{
+    margin-top: 3px;
+    padding: 20px;
+    border-radius: 25px;
+    border:5px;
+  }
+  .contenedor{
+    padding-left: 20px;
+    padding-top: 10px;
+    padding-right: 20px;
+    padding-bottom: 10px;
+  }
+  .inicio{
+    text-transform: uppercase;
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
+  .contenedor{
+    background-color: #699399;
+    padding: 20px;
+    border-radius: 25px;
+    border: 5px solid white;
+    margin-top: 5px;
+  }
+  .score{
+    justify-content: center;
+  }
+  .conTenedor{
+    padding: 20px;
+    border-radius: 25px;
+    border: 5px solid white;
+    width: 300px;
+  }
