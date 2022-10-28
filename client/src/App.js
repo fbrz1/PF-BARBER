@@ -70,9 +70,7 @@ function App() {
       <Route exact path="/dash/users/:id">
         <Single />
       </Route>
-
-      
-      <Route exact path="/dash/product/:id">
+      <Route exact path="/dash/products/:id">
         <SingleProduct />
       </Route>
 
