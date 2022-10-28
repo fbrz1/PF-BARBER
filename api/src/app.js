@@ -4,6 +4,8 @@ const bodyParser = require('body-parser');
 const morgan = require('morgan');
 const routes = require('./routes/index.js');
 const dotenv = require("dotenv")
+// import fileUpload from 'express-fileupload'
+
 
 require('./db.js');
 
@@ -26,6 +28,12 @@ server.use((req, res, next) => {
 });
 
 server.use('/', routes);
+
+//cloudinary
+// server.use(fileUpload({
+//   useTempFiles : true,
+//   tempFileDir: './uploads'
+// }))
 
 // Error catching endware.
 server.use((err, req, res, next) => { // eslint-disable-line no-unused-vars
