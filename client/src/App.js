@@ -66,7 +66,7 @@ function App() {
        </Route>
 
 
-      <Route exact path="/dash/users/iduser">
+      <Route exact path="/dash/users/:id">
         <Single />
       </Route>
 
