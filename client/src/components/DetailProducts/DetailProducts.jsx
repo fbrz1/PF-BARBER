@@ -105,11 +105,18 @@ function DetailProduct({ match }) {
           </button>
         ) : null}
         <div className={s.contenedor}>
-          <h3 className={s.name}>{product.name}</h3>
-          <img src={product.image} alt={product.image} className={s.img} />
-          <h3 className={s.price}>Price: ${product.price}</h3>
-          <h3 className={s.quality}>QUALITY:{product.quality}</h3>
-          <h3 classname={s.score}>SCORE:{product.score}</h3>
+          <div>
+            <h3 className={s.name}>{product.name}</h3>
+            <h3 className={s.price}>Price:${product.price}</h3>
+          </div>
+          <div>
+            <img src={product.image} alt={product.image} className={s.img} />
+          </div>
+          <div>
+            <h3 className={s.quality}>QUALITY:{product.quality}</h3>
+            <h3 className={s.score}>SCORE: {product.score}</h3>
+          </div>
+
           {console.log("productInCart", productInCar)}
         </div>
         <div>

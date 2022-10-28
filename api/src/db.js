@@ -6,31 +6,31 @@ const { DB_USER, DB_PASSWORD, DB_HOST, DB_NAME } = process.env;
 let sequelize =
   process.env.NODE_ENV === "production"
     ? new Sequelize({
-      database: DB_NAME,
-      dialect: "postgres",
-      host: DB_HOST,
-      port: 5432,
-      username: DB_USER,
-      password: DB_PASSWORD,
-      pool: {
-        max: 3,
-        min: 1,
-        idle: 10000,
-      },
-      dialectOptions: {
-        ssl: {
-          require: true,
-          // Ref.: https://github.com/brianc/node-postgres/issues/2009
-          rejectUnauthorized: false,
+        database: DB_NAME,
+        dialect: "postgres",
+        host: DB_HOST,
+        port: 5432,
+        username: DB_USER,
+        password: DB_PASSWORD,
+        pool: {
+          max: 3,
+          min: 1,
+          idle: 10000,
         },
-        keepAlive: true,
-      },
-      ssl: true,
-    })
+        dialectOptions: {
+          ssl: {
+            require: true,
+            // Ref.: https://github.com/brianc/node-postgres/issues/2009
+            rejectUnauthorized: false,
+          },
+          keepAlive: true,
+        },
+        ssl: true,
+      })
     : new Sequelize(
-      `postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/${DB_NAME}`,
-      { logging: false, native: false }
-    );
+        `postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/${DB_NAME}`,
+        { logging: false, native: false }
+      );
 // const sequelize = new Sequelize(`postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/development`, {
 //   logging: false, // set to console.log to see the raw SQL queries
 //   native: false, // lets Sequelize know we can use pg-native for ~30% more speed
@@ -62,12 +62,25 @@ sequelize.models = Object.fromEntries(capsEntries);
 
 // En sequelize.models están todos los modelos importados como propiedades
 // Para relacionarlos hacemos un destructuring
-const { Appointment, Image, Sale, Detailsale, Product, Schedule, Day, Hour, Service, User, Address } = sequelize.models;
-console.log(sequelize.models)
+const {
+  Appointment,
+  Image,
+  Sale,
+  Detailsale,
+  Product,
+  Schedule,
+  Day,
+  Hour,
+  Service,
+  Score,
+  User,
+  Address,
+} = sequelize.models;
+console.log(sequelize.models);
 
 //-----------------------> Address
-User.hasMany(Address)
-Address.belongsTo(User)
+User.hasMany(Address);
+Address.belongsTo(User);
 
 User.hasMany(Sale);
 Sale.belongsTo(User);
@@ -76,32 +89,37 @@ Sale.belongsTo(User);
 User.hasMany(Detailsale);
 Detailsale.belongsTo(User);
 
-Sale.hasMany(Detailsale)
-Detailsale.belongsTo(Sale)
+Sale.hasMany(Detailsale);
+Detailsale.belongsTo(Sale);
 
-Product.hasMany(Detailsale)
-Detailsale.belongsTo(Product)
+Product.hasMany(Detailsale);
+Detailsale.belongsTo(Product);
 
 //-------------------------------------> Image
-Product.belongsToMany(Image, { through: "Product_Images", })
-Image.belongsToMany(Product, { through: "Product_Images" })
+Product.belongsToMany(Image, { through: "Product_Images" });
+Image.belongsToMany(Product, { through: "Product_Images" });
 
 //------------------------> Apointment
 User.hasMany(Appointment);
 Appointment.belongsTo(User);
 
 //-----------------------> Schedule
-Schedule.hasOne(Service)
-Service.belongsTo(Schedule)
+Schedule.hasOne(Service);
+Service.belongsTo(Schedule);
 
-Schedule.hasMany(Day, { onDelete: 'CASCADE' });
+Schedule.hasMany(Day, { onDelete: "CASCADE" });
 Day.belongsTo(Schedule);
 
-Day.hasMany(Hour, { onDelete: 'CASCADE' })
-Hour.belongsTo(Day)
+Day.hasMany(Hour, { onDelete: "CASCADE" });
+Hour.belongsTo(Day);
 
+//-----------------------> Score
 
+Score.belongsTo(Product);
+Product.hasMany(Score, { as: "scores", foreignKey: "product_id" });
 
+User.hasMany(Score, { as: "scores", foreignKey: "user_id" });
+Score.belongsTo(User);
 
 // Aca vendrian las relaciones
 // Product.hasMany(Reviews);

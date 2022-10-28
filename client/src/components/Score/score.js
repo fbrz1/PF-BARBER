@@ -1,9 +1,13 @@
 import React from "react";
 import { getProductsDetail, updateProducts } from "../../redux/actions";
 import { useDispatch, useSelector } from "react-redux";
-const dispatch = useDispatch();
+import { Button } from "reactstrap";
+import Container from "material-ui/core/Container";
+import { Box, Paper } from "@material-ui/core";
+import { Remove, Add, Clear } from "@material-ui/icons";
 
 const Score = () => {
+  const dispatch = useDispatch();
   //const [score, setScore] = useState();
   const product = useSelector((state) => state.detail);
   const setScore = (newscore) => {
