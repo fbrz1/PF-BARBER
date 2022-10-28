@@ -117,7 +117,7 @@ export function getUsers(errorCallback) {
     try {
       const response = await axios.get(`/users`); //chequeada con yei-barbi
       if (response?.data) {
-        dispatch({ type: GET_USERS, payload: { users: response.data } });
+        dispatch({ type: GET_USERS, payload:  response.data });
       }
     } catch (error) {
       errorCallback && errorCallback(error);
