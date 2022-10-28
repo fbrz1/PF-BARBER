@@ -19,6 +19,7 @@ import "./App.css";
 import ItemCart from "./components/FullCart/FullCart";
 import New from "./components/Dashboard/UploadFiles/UploadFiles";
 import { inputs } from "./components/Dashboard/UploadFiles/formSource";
+import SingleProduct from './components/Dashboard/SingleProduct/SingleProduct';
 
 //import { createProducts, getProducts } from "./store/actions";
 //import ShoppingCart from "./components/Shopping/ShoppingCart";
@@ -69,7 +70,9 @@ function App() {
       <Route exact path="/dash/users/:id">
         <Single />
       </Route>
-
+      <Route exact path="/dash/products/:id">
+        <SingleProduct />
+      </Route>
 
 
       <Route exact path="/">
