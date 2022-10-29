@@ -59,13 +59,13 @@ export function createProducts(product) {
     }
   };
 }
-export function updateProducts(product, errorCallback) {
+export function updateProducts(id, product) {
   return async (dispatch) => {
     try {
-      const response = await axios.put(`/products/${product.id}`, product); //chequeada con yei-barbi
+      const response = await axios.put(`/products/${id}`, product); //chequeada con yei-barbi
       return response?.data
     } catch (error) {
-      errorCallback && errorCallback(error);
+      console.log(error);
     }
   };
 }
