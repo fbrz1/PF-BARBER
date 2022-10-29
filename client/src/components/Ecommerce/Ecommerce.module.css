@@ -3,10 +3,8 @@
   margin-top: 30px;
   width: 1400px;
   padding: 30px;
-
   background-color: #6363638e;
   border-radius: 30px;
-
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   margin-bottom: 35px;
@@ -14,13 +12,12 @@
 }
 
 .img {
-  height: 400px;
+  height: 200px;
 
-  width: 350px;
+  width: 150px;
 
   object-fit: cover;
 }
-
 .products {
   height: auto;
   background-color: white;
@@ -41,11 +38,13 @@
 }
 
 .productInfo {
+  text-transform: uppercase;
+  font-weight: 100;
   font-family: Montserrat;
   font-weight: 540;
   text-align: center;
   line-height: 1.5;
-  font-size: 28px;
+  font-size: 23px;
   padding: 10px;
 }
 
@@ -194,4 +193,8 @@ select::-ms-expand {
 }
 .links{
   margin-right: 2px;
+}
+.btn{
+  display: flex;
+  justify-content:space-around;
 }

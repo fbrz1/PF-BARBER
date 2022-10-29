@@ -52,9 +52,9 @@ export function createProducts(product) {
     try {
       dispatch(setLoading(true));
       const response = await axios.post(`/products`, product); //chequeada con yei-barbi
-      return response?.data
+      return response?.data;
     } catch (error) {
-      return error
+      return error;
     }
   };
 }
@@ -62,7 +62,17 @@ export function updateProducts(product, errorCallback) {
   return async (dispatch) => {
     try {
       const response = await axios.put(`/products/${product.id}`, product); //chequeada con yei-barbi
-      return response?.data
+      return response?.data;
+    } catch (error) {
+      errorCallback && errorCallback(error);
+    }
+  };
+}
+export function updateRating(product, errorCallback) {
+  return async (dispatch) => {
+    try {
+      const response = await axios.put(`/rating/${product.id}`, product); //chequeada con yei-barbi
+      return response?.data;
     } catch (error) {
       errorCallback && errorCallback(error);
     }
@@ -72,7 +82,7 @@ export function deleteProducts(product, errorCallback) {
   return async (dispatch) => {
     try {
       const response = await axios.delete(`/products/${product.id}`); //chequeada con yei-barbi
-      return response?.data
+      return response?.data;
     } catch (error) {
       errorCallback && errorCallback(error);
     }
@@ -89,7 +99,7 @@ export function getDBUser(userId) {
         });
       }
     } catch (error) {
-      return error
+      return error;
     }
   };
 }

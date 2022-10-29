@@ -76,10 +76,12 @@ function DetailProduct({ match }) {
       {/* <Link to={`/yourCart/${id}`} onClick={()=> addToCart(id)}>Want to Buy🛒</Link> */}
 
       <hr />
-      <Link to="/shop">
-        {" "}
-        <button className={s.button}>See more products!</button>
-      </Link>
+      <div className={s.seMore}>
+        <Link to="/shop">
+          {" "}
+          <button className={s.button}>See more products!</button>
+        </Link>
+      </div>
 
       {/* Card */}
       <div>
@@ -161,7 +163,11 @@ function DetailProduct({ match }) {
               </svg>{" "}
             </button>
           ) : null}
-          {productInCar ? <h3>Quantity {productInCar.quantity}</h3> : null}
+          {productInCar ? (
+            <div className={s.quantity}>
+              <h3>Quantity: {productInCar.quantity}</h3>
+            </div>
+          ) : null}
         </div>
 
         {Object.keys(pay).length ? (
@@ -197,12 +203,14 @@ function DetailProduct({ match }) {
             BUY NOW
           </button>
         ) : (
-          <Link to="/shop">
-            {" "}
-            <Button color="warning" outline className={s.inicio}>
-              Inicia sesión para comprar
-            </Button>
-          </Link>
+          <div className={s.inisec}>
+            <Link to="/shop">
+              {" "}
+              <Button color="warning" outline className={s.inicio}>
+                Inicia sesión para comprar
+              </Button>
+            </Link>
+          </div>
         )}
       </div>
     </div>

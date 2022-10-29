@@ -1,5 +1,5 @@
 import React from "react";
-import { getProductsDetail, updateProducts } from "../../redux/actions";
+import { getProductsDetail, updateRating } from "../../redux/actions";
 import { useDispatch, useSelector } from "react-redux";
 import { Button } from "reactstrap";
 import Container from "material-ui/core/Container";
@@ -9,11 +9,13 @@ import { Remove, Add, Clear } from "@material-ui/icons";
 const Score = () => {
   const dispatch = useDispatch();
   //const [score, setScore] = useState();
+
   const product = useSelector((state) => state.detail);
   const setScore = (newscore) => {
     dispatch(
-      updateProducts({
-        ...product,
+      updateRating({
+        productId: product.id,
+        userId: 5, // Hay que cambiar esto.
         score: newscore,
       })
     );

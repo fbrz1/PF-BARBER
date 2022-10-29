@@ -116,9 +116,9 @@ Hour.belongsTo(Day);
 //-----------------------> Score
 
 Score.belongsTo(Product);
-Product.hasMany(Score, { as: "scores", foreignKey: "product_id" });
+Product.hasMany(Score);
 
-User.hasMany(Score, { as: "scores", foreignKey: "user_id" });
+User.hasMany(Score);
 Score.belongsTo(User);
 
 // Aca vendrian las relaciones

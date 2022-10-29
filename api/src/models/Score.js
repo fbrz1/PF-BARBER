@@ -11,6 +11,14 @@ module.exports = (sequelize) => {
         defaultValue: 1,
         validate: { min: 1, max: 5 },
       },
+      userId: {
+        type: DataTypes.INTEGER,
+        primaryKey: true,
+      },
+      productId: {
+        type: DataTypes.INTEGER,
+        primaryKey: true,
+      },
     },
     {
       timestamp: false,

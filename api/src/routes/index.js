@@ -17,6 +17,7 @@ const productController = require("../controllers/product");
 const imageController = require("../controllers/image");
 
 const mercadoIndex = require("../controllers/mercadoIndex");
+const score = require("../controllers/score");
 
 const router = Router();
 router.use(json());
@@ -36,5 +37,7 @@ router.use("/images", imageController);
 
 router.use("/auth", authController);
 router.use("/payments", mercadoIndex);
+
+router.use("/rating", score);
 
 module.exports = router;
