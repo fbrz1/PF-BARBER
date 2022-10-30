@@ -95,7 +95,7 @@ const Ecommerce = ({
     <div>
       <br />
       <div>
-        <Link to="/">
+        {/*  <Link to="/">
           <button className={s.button}>Home</button>
         </Link>
         <button
@@ -110,7 +110,7 @@ const Ecommerce = ({
           }}
         >
           {isLogueado ? "Cerrar sesión" : "Iniciar sesión"}
-        </button>
+        </button> */}
 
         {/* Searchbar */}
 
@@ -118,37 +118,38 @@ const Ecommerce = ({
 
         {/* buttons filter Quality */}
         <div className={s.ordenadores}>
-          <Button
-            id="All"
-            name="All"
-            value="default"
-            onClick={(quality) => handleQuality(quality)}
-            color="dark"
-            href="#"
-            tag="a"
-          >
-            All
-          </Button>{" "}
-          <Button
-            id="Premium"
-            name="Premium"
-            value="Premium"
-            onClick={(quality) => handleQuality(quality)}
-            color="dark"
-            tag="input"
-            type="submit"
-          />{" "}
-          <Button
-            id="Basic"
-            name="Basic"
-            value="Basic"
-            onClick={(quality) => handleQuality(quality)}
-            color="dark"
-            tag="input"
-            type="reset"
-          />{" "}
-        </div>
-        {/*<button
+          <div className={s.allPrem}>
+            <Button
+              id="All"
+              name="All"
+              value="default"
+              onClick={(quality) => handleQuality(quality)}
+              color="dark"
+              href="#"
+              tag="a"
+            >
+              All
+            </Button>{" "}
+            <Button
+              id="Premium"
+              name="Premium"
+              value="Premium"
+              onClick={(quality) => handleQuality(quality)}
+              color="dark"
+              tag="input"
+              type="submit"
+            />{" "}
+            <Button
+              id="Basic"
+              name="Basic"
+              value="Basic"
+              onClick={(quality) => handleQuality(quality)}
+              color="dark"
+              tag="input"
+              type="reset"
+            />{" "}
+          </div>
+          {/*<button
           id="All"
           name="All"
           value="default"
@@ -173,40 +174,38 @@ const Ecommerce = ({
         >
           Basic
         </button> */}
-
-        {/* <SearchBar setCurrentPage={setCurrentPage}/> */}
-
-        {/* price sort */}
-        <Form className={s.selectors}>
-          <Row className="row-cols-lg-auto g-3 align-items-center">
-            <Col>
-              <Label className="visually-hidden" for="examplePassword">
-                Shop
-              </Label>
-              <Input
-                type="select"
-                className={s.select2}
-                onChange={(shop) => handleShop(shop)}
-              >
-                <option value="all">All</option>
-                <option value="after shave">After Shave</option>
-                <option value="razor">Razors</option>
-              </Input>
-            </Col>
-            <Col className={s.select}>
-              <Input type="select" onChange={(sort) => handleSort(sort)}>
-                {" "}
-                Price
-                <option hidden value="">
-                  ⇅
-                </option>
-                <option value="high">+</option>
-                <option value="lower">-</option>
-              </Input>
-            </Col>
-          </Row>
-        </Form>
-        {/* <div className={s.selectFilterSort}>
+          {/* <SearchBar setCurrentPage={setCurrentPage}/> */}
+          {/* price sort */}
+          <Form className={s.selectors}>
+            <Row className="row-cols-lg-auto g-3 align-items-center">
+              <Col>
+                <Label className="visually-hidden" for="examplePassword">
+                  Shop
+                </Label>
+                <Input
+                  type="select"
+                  className={s.select2}
+                  onChange={(shop) => handleShop(shop)}
+                >
+                  <option value="all">All</option>
+                  <option value="after shave">After Shave</option>
+                  <option value="razor">Razors</option>
+                </Input>
+              </Col>
+              <Col className={s.select}>
+                <Input type="select" onChange={(sort) => handleSort(sort)}>
+                  {" "}
+                  Price
+                  <option hidden value="">
+                    ⇅
+                  </option>
+                  <option value="high">+</option>
+                  <option value="lower">-</option>
+                </Input>
+              </Col>
+            </Row>
+          </Form>
+          {/* <div className={s.selectFilterSort}>
           <label>Price </label>
           <select className={s.select} onChange={(sort) => handleSort(sort)}>
             <option hidden value="">
@@ -216,9 +215,8 @@ const Ecommerce = ({
             <option value="lower">-</option>
           </select>
       */}
-
-        {/* filter anidado */}
-        {/*<UncontrolledDropdown group>
+          {/* filter anidado */}
+          {/*<UncontrolledDropdown group>
           <Button color="primary" onChange={(shop) => handleShop(shop)}>
             Shop
           </Button>
@@ -229,7 +227,7 @@ const Ecommerce = ({
             <DropdownItem value="razor">Razors</DropdownItem>
           </DropdownMenu>
         </UncontrolledDropdown> */}
-        {/*<label>Category</label>
+          {/*<label>Category</label>
         <select className={s.select} onChange={(shop) => handleShop(shop)}>
           <option hidden value="all">
             Shop
@@ -238,6 +236,7 @@ const Ecommerce = ({
           <option value="after shave">After Shave</option>
           <option value="razor">Razors</option>
         </select> */}
+        </div>
       </div>
       <br />
 
@@ -264,7 +263,7 @@ const Ecommerce = ({
                   <div className={s.btn}>
                     <button
                       type="button"
-                      class="btn btn-success"
+                      class="btn btn-dark"
                       onClick={async (e) => {
                         e.preventDefault();
                         await addItemToCart(product);
@@ -284,7 +283,7 @@ const Ecommerce = ({
                     </button>
                     <button
                       type="button"
-                      class="btn btn-warning"
+                      class="btn btn-dark"
                       onClick={async (e) => {
                         e.preventDefault();
                         await subtractItemToCart(product);
@@ -305,7 +304,7 @@ const Ecommerce = ({
 
                     <button
                       type="button"
-                      class="btn btn-danger"
+                      class="btn btn-dark"
                       onClick={async (e) => {
                         e.preventDefault();
                         await deleteItemToCart(product);
@@ -317,12 +316,11 @@ const Ecommerce = ({
                         width="25"
                         height="25"
                         fill="currentColor"
-                        class="bi bi-cart-x"
+                        class="bi bi-cart-x-fill"
                         viewBox="0 0 16 16"
                       >
-                        <path d="M7.354 5.646a.5.5 0 1 0-.708.708L7.793 7.5 6.646 8.646a.5.5 0 1 0 .708.708L8.5 8.207l1.146 1.147a.5.5 0 0 0 .708-.708L9.207 7.5l1.147-1.146a.5.5 0 0 0-.708-.708L8.5 6.793 7.354 5.646z" />
-                        <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1H.5zm3.915 10L3.102 4h10.796l-1.313 7h-8.17zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0z" />
-                      </svg>{" "}
+                        <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1H.5zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zM7.354 5.646 8.5 6.793l1.146-1.147a.5.5 0 0 1 .708.708L9.207 7.5l1.147 1.146a.5.5 0 0 1-.708.708L8.5 8.207 7.354 9.354a.5.5 0 1 1-.708-.708L7.793 7.5 6.646 6.354a.5.5 0 1 1 .708-.708z" />
+                      </svg>
                     </button>
                   </div>
                   <h3>{findProductCar?.quantity}</h3>
@@ -335,9 +333,11 @@ const Ecommerce = ({
                   <div className={s.productInfo}>
                     <h2 className={s.productPrice}> ${product.price}</h2>
                   </div>
-                  <Link to={`/product/${product.id}`} className={s.button}>
-                    BUY
-                  </Link>
+                  <div className={s.fixButton}>
+                    <Link to={`/product/${product.id}`} className={s.button}>
+                      BUY
+                    </Link>
+                  </div>
                 </div>
               );
             })
@@ -359,9 +359,11 @@ const Ecommerce = ({
                     <h3 className={s.productPrice}> ${e.price}</h3>
                     <h3>Quality: {e.quality}</h3>
                   </div>
-                  <Link to={`/product/${e.id}`} className={s.button}>
-                    BUY
-                  </Link>
+                  <div class="d-grid gap-2 col-6 mx-auto">
+                    <Link to={`/product/${e.id}`} className={s.button}>
+                      BUY
+                    </Link>
+                  </div>
                 </div>
               );
             })}

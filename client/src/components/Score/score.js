@@ -2,7 +2,7 @@ import React from "react";
 import { getProductsDetail, updateRating } from "../../redux/actions";
 import { useDispatch, useSelector } from "react-redux";
 import { Button } from "reactstrap";
-import Container from "material-ui/core/Container";
+import Container from "@material-ui/core/Container";
 import { Box, Paper } from "@material-ui/core";
 import { Remove, Add, Clear } from "@material-ui/icons";
 
@@ -62,5 +62,3 @@ const Score = () => {
 };
 
 export default Score;
-
-//npm install react icon

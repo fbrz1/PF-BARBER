@@ -64,7 +64,7 @@
   text-align: center;
   line-height: 1.42857143;
   background-color: transparent;
-  font-size: 32px;
+  font-size: 20px;
   width: 100%;
 }
 
@@ -101,6 +101,7 @@ select::-ms-expand {
   background-color: aqua;
   transition: 500ms;
 }
+
 
 /* .select {
   /* styling */
@@ -186,15 +187,25 @@ select::-ms-expand {
 }
 
 .selectors{
-  margin-top:10px;
   display: flex;
+  justify-content: space-between;
+  margin-left: 8px;
+}
+.allPrem{
+  
+  justify-content: space-around;
+}
+.ordenadores{
+  display:flex;
   justify-content: center;
-
+  
 }
 .links{
   margin-right: 2px;
 }
 .btn{
-  display: flex;
-  justify-content:space-around;
+  display:grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
 }
+

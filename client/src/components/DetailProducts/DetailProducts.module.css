@@ -24,14 +24,14 @@
     text-transform: uppercase;
     color:rgb(48, 48, 110);
     
-    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-family: "Times New Roman", Times, serif;
     text-align: start;
     width: 300px;
     
   }
   .price{
     text-transform: uppercase;
-    font-family: cursive;
+    font-family: "Times New Roman", Times, serif;
     position: absolute;
     margin-top: 5px;
     left: 2%;
@@ -39,7 +39,7 @@
   }
   .quality{
     text-transform: uppercase;
-    font-family: cursive;
+    font-family: "Times New Roman", Times, serif;
     position: relative;
     margin-top: 10px;
     text-align: left;
@@ -78,7 +78,7 @@
   .score{
     margin-top: 2px;
     position:absolute;
-    font-family: cursive;
+    font-family: "Times New Roman", Times, serif;
     text-align: left;
     
   }
@@ -94,7 +94,7 @@
   right: 43%;
 }
 .quantity{
-  font-family: cursive;
+  font-family: "Times New Roman", Times, serif;
   text-transform: uppercase;
   position:absolute;
   right: 7%;
