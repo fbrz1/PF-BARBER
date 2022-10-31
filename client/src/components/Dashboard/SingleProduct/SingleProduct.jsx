@@ -7,6 +7,8 @@ import { Link, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { clearDetail, getProducts, getProductsDetail, updateProducts } from '../../../redux/actions';
 import { Button } from "reactstrap";
+import Swal from 'sweetalert2'
+//sweet alert
 
 
 const SingleProduct = () => {
@@ -51,6 +53,13 @@ const SingleProduct = () => {
     }
 
     const saveHandle = (e) => {
+        Swal.fire({
+            position: 'top-center',
+            icon: 'success',
+            title: 'Suceffuly Upload!',
+            showConfirmButton: false,
+            timer: 1500
+        })
         setEdit("false")
         setInput({
             price: e.target.value,
@@ -59,7 +68,6 @@ const SingleProduct = () => {
             description: e.target.value,
         })
         dispatch(getProductsDetail(id))
-
     }
 
     return (

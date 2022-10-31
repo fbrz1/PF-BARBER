@@ -5,7 +5,7 @@ import Sidebar from '../Sidebar/Sidebar';
 import Navbar from '../Navbar/Navbar';
 import '../Single/Single.scss';
 import { getDBUser, updateUsers } from "../../../redux/actions";
-
+import Swal from 'sweetalert2'
 
 const Single = (props) => {
 
@@ -35,6 +35,13 @@ function handleChange(e) {
     }
     dispatch(updateUsers(id, input))
     const saveHandle = (e) => {
+        Swal.fire({
+            position: 'top-center',
+            icon: 'success',
+            title: 'Suceffuly Upload!',
+            showConfirmButton: false,
+            timer: 1500
+        })
         setEdit("false")
         setInput({
             isAdmin : e.target.value
@@ -83,7 +90,7 @@ function handleChange(e) {
                             </div>
                             : <div className='top'>
                             <div className='left'>
-                                <button class='editButton' onClick={(e) => saveHandle(e)}>Edit</button>
+                                <button class='editButton' onClick={(e) => saveHandle(e)}>Save</button>
                                 <h1 className='title'> Information</h1>
                                 <div className='item'>     
                                     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Falkland_Islands_Penguins_05.jpg/1200px-Falkland_Islands_Penguins_05.jpg"
