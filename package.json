@@ -4,6 +4,7 @@
     "express-fileupload": "^1.4.0",
     "formik": "^2.2.9",
     "jwt-decode": "^3.1.2",
-    "multer": "^1.4.5-lts.1"
+    "multer": "^1.4.5-lts.1",
+    "sweetalert": "^2.1.2"
   }
 }

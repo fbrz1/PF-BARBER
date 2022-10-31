@@ -12,6 +12,7 @@ import Navbar from "../Navbar/Navbar";
 import DriveFolderUploadOutlinedIcon from "@mui/icons-material/DriveFolderUploadOutlined";
 import Box from '@mui/material/Box';
 import NativeSelect from '@mui/material/NativeSelect';
+import Swal from 'sweetalert2'
 
 
 
@@ -67,7 +68,15 @@ console.log(info)
     e.preventDefault()
     if (info.name==="" || info.description === "" || info.price==="" || info.stock==="" || info.quality==="") {
 alert('Complete all the fields')
+
 //sweet alert
+Swal.fire({
+  position: 'top-end',
+  icon: 'success',
+  title: 'Suceffuly Upload!',
+  showConfirmButton: false,
+  timer: 1500
+})
     }
     else {
       dispatch(addProd(info))
@@ -82,6 +91,13 @@ alert('Complete all the fields')
       })
       setFile("")
       //sweet alert
+      Swal.fire({
+        position: 'center',
+        icon: 'success',
+        title: 'Suceffuly Upload!',
+        showConfirmButton: false,
+        timer: 1500
+      })
     }
     
 
@@ -168,7 +184,7 @@ alert('Complete all the fields')
         </Box><br />
 
 
-     
+        
         <button type="submit" onClick={(e)=>handleSubmit(e)}>Upload</button>
 
 
