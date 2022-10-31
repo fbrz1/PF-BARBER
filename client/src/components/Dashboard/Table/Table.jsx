@@ -42,9 +42,9 @@ let id
           'Your file has been deleted.',
           'success'
         )
+        dispatch(deleteProducts(e))
       }
       getProducts()
-      dispatch(deleteProducts(e))
       getProducts()
     }
     )
