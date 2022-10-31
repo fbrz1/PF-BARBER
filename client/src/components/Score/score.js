@@ -1,6 +1,7 @@
 import React from "react";
 import { getProductsDetail, updateRating } from "../../redux/actions";
 import { useDispatch, useSelector } from "react-redux";
+import Rating from "@mui/material/Rating";
 import { Button } from "reactstrap";
 import Container from "@material-ui/core/Container";
 import { Box, Paper } from "@material-ui/core";
@@ -21,44 +22,14 @@ const Score = () => {
     );
     dispatch(getProductsDetail(product.id));
   };
-  //if(autentiquit) {
-  return (
-    <Container>
-      <Paper>
-        <Box>
-          <Button
-            onClick={() =>
-              setScore(product.score === 0 ? 0 : product.score - 1)
-            }
-            variant="contained"
-          >
-            <Remove />
-          </Button>
-        </Box>
-        <Box>
-          <Button
-            onClick={() =>
-              setScore(product.score === 5 ? 5 : product.score + 1)
-            }
-            variant="contained"
-          >
-            <Add />
-          </Button>
-        </Box>
-        <Paper square>{product.score}</Paper>
-        <Box>
-          <Button variant="contained">
-            <Clear />
-          </Button>
-        </Box>
-      </Paper>
-    </Container>
-  );
-  // }
-  //
-  //return (
-  //<Button>{alert(Registro de Logueo)}<Button>
-  // )
-};
 
+  return (
+    <Rating
+      value={product.score}
+      onChange={(event, newValue) => {
+        setScore(newValue);
+      }}
+    />
+  );
+};
 export default Score;

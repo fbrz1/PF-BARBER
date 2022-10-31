@@ -1,4 +1,3 @@
-
 import {
   SET_LOADING,
   GET_PRODUCTS,
@@ -19,8 +18,9 @@ import {
   REMOVE_ITEM_FROM_CART,
   CLEAR_CART,
   GET_LOCALSTORAGE,
-  GET_PAYMENTS
-
+  GET_PAYMENTS,
+  ADD_SCORE,
+  ADD_FEED,
 } from "./actions";
 
 const initialState = {
@@ -33,16 +33,19 @@ const initialState = {
   cart: [],
   localStorage: [],
   filterstate: [],
-  error: '',
-  payMercadoPago: {}
-
+  error: "",
+  payMercadoPago: {},
+  score: [],
+  feedback: [],
 };
 
-export default function reducer(state = initialState, { type, payload, quantity }) {
-
+export default function reducer(
+  state = initialState,
+  { type, payload, quantity }
+) {
   switch (type) {
     case GET_PAYMENTS:
-      return { ...state, payMercadoPago: { ...payload } }
+      return { ...state, payMercadoPago: { ...payload } };
     case SET_LOADING:
       return { ...state, ...payload };
     case GET_PRODUCTS:
@@ -65,6 +68,18 @@ export default function reducer(state = initialState, { type, payload, quantity 
       };
     case SEARCH_PRODUCTS:
       return { ...state, products: payload };
+
+    case ADD_SCORE:
+      return {
+        ...state,
+        score: payload,
+      };
+
+    case ADD_FEED:
+      return {
+        ...state,
+        feedback: payload,
+      };
 
     //--------------------------SCORE
     // case SORT_SCORE:
@@ -115,51 +130,65 @@ export default function reducer(state = initialState, { type, payload, quantity 
       return {
         ...state,
         cart: payload,
-        payMercadoPago: {}
-      }
+        payMercadoPago: {},
+      };
     }
     case ADD_TO_CART: {
-      let itemInCart = state.cart.find(item => item.productId === payload.id)
-      return itemInCart ? {
-        ...state,
-        cart: state.cart.map(item => item.productId === payload.id && quantity ? quantity : item.quantity + 1 <= payload.stock ? {
-          ...item,
-          quantity: item.quantity + 1
-        } : item),
-
-      }
-        :
-        {
-          ...state,
-          cart: quantity ? quantity : 1 <= payload.stock ?
-            [...state.cart,
-            {
-              id: state.cart.length + 1,
-              quantity: quantity ? quantity : 1,
-              iva: 0,
-              description: "",
-              state: 2,
-              descriptionState: "",
-              productId: payload.id,
-              saleId: null,
-              userId: null,
-              product: payload
-            }]
-            :
-            [...state.cart],
-        }
+      let itemInCart = state.cart.find((item) => item.productId === payload.id);
+      return itemInCart
+        ? {
+            ...state,
+            cart: state.cart.map((item) =>
+              item.productId === payload.id && quantity
+                ? quantity
+                : item.quantity + 1 <= payload.stock
+                ? {
+                    ...item,
+                    quantity: item.quantity + 1,
+                  }
+                : item
+            ),
+          }
+        : {
+            ...state,
+            cart: quantity
+              ? quantity
+              : 1 <= payload.stock
+              ? [
+                  ...state.cart,
+                  {
+                    id: state.cart.length + 1,
+                    quantity: quantity ? quantity : 1,
+                    iva: 0,
+                    description: "",
+                    state: 2,
+                    descriptionState: "",
+                    productId: payload.id,
+                    saleId: null,
+                    userId: null,
+                    product: payload,
+                  },
+                ]
+              : [...state.cart],
+          };
     }
     case SUBTRACT_FROM_CART: {
-      let itemToDelete = state.cart.find(item => item.productId === payload.id);
+      let itemToDelete = state.cart.find(
+        (item) => item.productId === payload.id
+      );
 
-      return itemToDelete?.quantity > 1 ? {
-        ...state,
-        cart: state.cart.map(item => item.productId === payload.id ? { ...item, quantity: --item.quantity } : item)
-      }
-        :
-        {
-          ...state
-        }
+      return itemToDelete?.quantity > 1
+        ? {
+            ...state,
+            cart: state.cart.map((item) =>
+              item.productId === payload.id
+                ? { ...item, quantity: --item.quantity }
+                : item
+            ),
+          }
+        : {
+            ...state,
+          };
     }
     case REMOVE_ITEM_FROM_CART: {
       return {
@@ -174,18 +203,15 @@ export default function reducer(state = initialState, { type, payload, quantity 
         cart: [],
       };
 
-
     case GET_LOCALSTORAGE:
-      const storage = localStorage.getItem("products")
+      const storage = localStorage.getItem("products");
       return {
         ...state,
         cart: storage ? JSON.parse(storage) : [],
       };
     // <------------------------
 
-
     // cart: state.cart.filter((item) => item.id !== payload),
-
 
     // case FILTER_QUALITY:
     // const all = state.products;
@@ -194,7 +220,7 @@ export default function reducer(state = initialState, { type, payload, quantity 
     //     ...state,
     //     allProducts: filter //lista que recortamos lo que necesitemos
     // };
-    // case FILTER_QUALITY: FABRI CAMBIOS ?? 
+    // case FILTER_QUALITY: FABRI CAMBIOS ??
     //   const all = state.allProducts;
     //   const filter = payload === 'default' ? all : all.filter(r => r.quality.toLowerCase() === payload.toLowerCase())
     //   return {
@@ -215,11 +241,16 @@ export default function reducer(state = initialState, { type, payload, quantity 
 
     case FILTER_QUALITY:
       const all = state.allProducts;
-      const filter = payload === 'default' ? all : all.filter(r => r.quality.toLowerCase() === payload.toLowerCase())
+      const filter =
+        payload === "default"
+          ? all
+          : all.filter(
+              (r) => r.quality.toLowerCase() === payload.toLowerCase()
+            );
       return {
         ...state,
         products: filter,
-        filterstate: filter
+        filterstate: filter,
       };
     case FILTER_SHOP:
       const allAccesory = state.filterstate;
@@ -228,8 +259,8 @@ export default function reducer(state = initialState, { type, payload, quantity 
         payload === "all"
           ? allAccesory
           : allAccesory.filter((r) =>
-            r.name.toLowerCase().includes(payload.toLowerCase())
-          );
+              r.name.toLowerCase().includes(payload.toLowerCase())
+            );
 
       return {
         ...state,
@@ -259,13 +290,13 @@ export default function reducer(state = initialState, { type, payload, quantity 
     case "FAILURE":
       return {
         ...state,
-        error: payload
-      }
+        error: payload,
+      };
     // error: payload,
     //}
 
     default:
       return state;
   }
-};
+}
 //}

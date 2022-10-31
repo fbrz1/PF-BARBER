@@ -20,6 +20,7 @@ import SearchBar from "../SearchBar/SearchBar.jsx";
 import { Link } from "react-router-dom";
 import { CartContext } from "../Shopping/ShoppingCart";
 import { Button, Form, Input, Label, Row, Col } from "reactstrap";
+import { FaAssistiveListeningSystems } from "react-icons/fa";
 
 const Ecommerce = ({
   products,
@@ -92,7 +93,7 @@ const Ecommerce = ({
   }
 
   return (
-    <div>
+    <div className={s.background}>
       <br />
       <div>
         {/*  <Link to="/">
@@ -263,7 +264,7 @@ const Ecommerce = ({
                   <div className={s.btn}>
                     <button
                       type="button"
-                      class="btn btn-dark"
+                      class="btn btn-secondary"
                       onClick={async (e) => {
                         e.preventDefault();
                         await addItemToCart(product);
@@ -283,7 +284,7 @@ const Ecommerce = ({
                     </button>
                     <button
                       type="button"
-                      class="btn btn-dark"
+                      class="btn btn-secondary"
                       onClick={async (e) => {
                         e.preventDefault();
                         await subtractItemToCart(product);
@@ -304,7 +305,7 @@ const Ecommerce = ({
 
                     <button
                       type="button"
-                      class="btn btn-dark"
+                      class="btn btn-secondary"
                       onClick={async (e) => {
                         e.preventDefault();
                         await deleteItemToCart(product);
@@ -322,10 +323,16 @@ const Ecommerce = ({
                         <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1H.5zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zM7.354 5.646 8.5 6.793l1.146-1.147a.5.5 0 0 1 .708.708L9.207 7.5l1.147 1.146a.5.5 0 0 1-.708.708L8.5 8.207 7.354 9.354a.5.5 0 1 1-.708-.708L7.793 7.5 6.646 6.354a.5.5 0 1 1 .708-.708z" />
                       </svg>
                     </button>
+                    <div className={s.container}>
+                      <h3 className={s.quantity}>{findProductCar?.quantity}</h3>
+                    </div>
                   </div>
-                  <h3>{findProductCar?.quantity}</h3>
 
-                  <h2 className={s.productInfo}>{product.name}</h2>
+                  <h2 title={product.name} className={s.productInfo}>
+                    {product.name.length > 26
+                      ? product.name.substring(0, 23) + "..."
+                      : product.name}
+                  </h2>
                   <img className={s.img} src={product.image} alt="img"></img>
                   <h3 className={s.productQuality}>
                     {product.quality.toUpperCase()}

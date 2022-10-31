@@ -1,7 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Caveat&family=Indie+Flower&family=Noto+Sans:wght@200&display=swap");
 
 .search {
-  width: 40%;
+  width: 30%;
+  height: 20%;
   border-radius: 26px;
   border: 1px solid #ada9a9;
   padding: 1% 8%;

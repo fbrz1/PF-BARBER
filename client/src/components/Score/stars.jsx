@@ -8,14 +8,17 @@ const colors = {
   grey: "#a9a9a9",
 };
 
-export default function Score() {
+export default function Stars() {
   const stars = Array(5).fill(0);
   const [currentValue, setCurrentValue] = useState(0);
   const [hoverValue, setHoverValue] = useState(undefined);
+  //const [input, setInput] = useState();
+  const prods = useSelector((state) => state.products);
 
+  //const score = useSelector((state) => state.score);
+  //const feedback = useSelector((state) => state.feedback);
   /*     const prods = useSelector((state) => state.products)
 
-    const rat = prods.map(item  => item.product.score)
 
     for (let star in stars){
         const starPercentage = (stars[star]/stars.length)*100;
@@ -29,6 +32,9 @@ export default function Score() {
 
   const handleClick = (values) => {
     setCurrentValue(values);
+    console.log(prods);
+    console.log(values);
+    console.log(score);
   };
 
   const handleMouseOver = (value) => {
@@ -41,16 +47,21 @@ export default function Score() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    let scores = [];
-    scores.push(currentValue);
-    console.log(scores);
-    Swal.fire({
+    //score.push(currentValue);
+    console.log(currentValue);
+  };
+  //setInput({
+  /*    ...input,
+      score: [...score, e.target.value],
+      feedback: e.target.value,
+    }); */
+  /*    Swal.fire({
       icon: "success",
       title: "Thank you!",
       text: "Your review has been sent successfully",
-    });
-  };
-
+    }); */
+  //};
+  const score = prods.map((el) => el.score);
   return (
     <form>
       <div style={styles.container}>
@@ -60,6 +71,7 @@ export default function Score() {
             {stars.map((_, index) => {
               return (
                 <FaStar
+                  name="score"
                   key={index}
                   size={24}
                   style={{
@@ -79,11 +91,21 @@ export default function Score() {
                 />
               );
             })}
-            <span id="number-rating">{/* {starPercentageRounded}  */}</span>
+            <span id="number-rating"> ({score.length} reviews)</span>
           </div>
         </div>
-        <textarea placeholder="What's your feedback?" style={styles.textarea} />
-        <button style={styles.button} onSubmit={handleSubmit}>
+        <textarea
+          name="feedback"
+          type="text"
+          placeholder="What's your feedback?"
+          style={styles.textarea}
+        />
+        <button
+          type="submit"
+          value="Submit"
+          style={styles.button}
+          onSubmit={handleSubmit}
+        >
           Submit
         </button>
       </div>

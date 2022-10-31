@@ -8,13 +8,14 @@ const {
 } = require("../middlewares/getAllProducts");
 const router = Router();
 
-router.post("/rating", async (req, res) => {
+router.post("/", async (req, res) => {
   try {
     const { productId, userId, score } = req.body;
     // const createScore = await getAllProducts(req.body);
     // let valueScore = info.userScore;
     // let productInfo = { ...info };
     // delete productInfo.userScore;
+    //
     const [newScore, created] = await Score.upsert({
       productId,
       score,
@@ -22,7 +23,7 @@ router.post("/rating", async (req, res) => {
     });
     const scores = await Score.findAll({
       where: {
-        productId: id,
+        productId,
       },
     });
     //let average = Object.values(scores);
@@ -47,7 +48,7 @@ router.post("/rating", async (req, res) => {
   }
 });
 
-router.post("/rating/:id", async (req, res) => {
+/* router.post("/:id", async (req, res) => {
   try {
     const product = await getProductByPk(req.params.id);
     res.json({
@@ -56,6 +57,6 @@ router.post("/rating/:id", async (req, res) => {
   } catch (err) {
     console.log(err);
   }
-});
+}); */
 
 module.exports = router;

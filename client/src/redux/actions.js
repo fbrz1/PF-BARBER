@@ -24,6 +24,8 @@ export const CLEAR_CART = "CLEAR_CART";
 export const GET_LOCALSTORAGE = "GET_LOCALSTORAGE";
 
 export const GET_PAYMENTS = "GET_PAYMENTS";
+export const ADD_SCORE = "ADD_SCORE";
+export const ADD_FEED = "ADD_FEED";
 
 // export const SORT_SCORE ="SORT_SCORE";
 // export const SCORE_LOWER = "SCORE_LOWER"
@@ -331,5 +333,18 @@ export function getPaymentLink(productId, userId) {
     } catch (error) {
       console.log(error);
     }
+  };
+}
+export function addScore(payload) {
+  return {
+    type: ADD_SCORE,
+    payload,
+  };
+}
+
+export function addFeedBack(payload) {
+  return {
+    type: ADD_FEED,
+    payload,
   };
 }
