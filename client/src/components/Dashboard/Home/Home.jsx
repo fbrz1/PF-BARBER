@@ -18,7 +18,7 @@ function HomeDash() {
       <div className="homeContainer">
         <NavbarDash />
         <div className="widgets">
-          <Widget type="user" />
+          <Widget isUser="true" type="user" />
           <Widget type="order" />
           <Widget type="earning" />
           <Widget type="balance" />

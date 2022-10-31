@@ -140,10 +140,10 @@ export function deleteUsers(users, errorCallback) {
     }
   };
 }
-export function updateUsers(users, errorCallback) {
+export function updateUsers(id, users) {
   return async (dispatch) => {
     try {
-      const response = await axios.put(`/users/${users.id}`, users); //falta, se agregara..volver a revisar
+      const response = await axios.put(`/users/${id}`, users); //falta, se agregara..volver a revisar
       if (response?.data) {
         return dispatch({
           type: UPDATE_USERS,
@@ -152,7 +152,7 @@ export function updateUsers(users, errorCallback) {
         //dispatch(getProducts());
       }
     } catch (error) {
-      errorCallback && errorCallback(error);
+      console.log(error);
     }
   };
 }
