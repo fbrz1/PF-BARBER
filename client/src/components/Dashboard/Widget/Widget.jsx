@@ -6,23 +6,25 @@ import MonetizationOnOutlinedIcon from '@mui/icons-material/MonetizationOnOutlin
 import Person2OutlinedIcon from '@mui/icons-material/Person2Outlined';
 import AccountBalanceWalletOutlinedIcon from '@mui/icons-material/AccountBalanceWalletOutlined';
 import { useDispatch, useSelector } from 'react-redux';
-import { getUsers } from '../../../redux/actions';
-function Widget({type, isUser}) {
+import { getUsers, getProducts } from '../../../redux/actions';
+function Widget({type, isUser, isProducts}) {
 
     let data;
     let dispatch = useDispatch()
     const users = useSelector((state) => state.users)
+    const products = useSelector((state) => state.products)
 
     //temporal
     useEffect(() => {
       dispatch(getUsers())
+      dispatch(getProducts())
 
     }, [])
     
 
 
     const amount = 100
-
+    const productss = products.length
     const userss = users.length
 
     switch(type){
@@ -53,7 +55,8 @@ function Widget({type, isUser}) {
     <div className='widget'>
         <div className="left">
              <span className="title">{data.title}</span>
-             <span className="counter">{data.ifMoney && "$"}{isUser ? userss : ""}</span>
+             <span className="counter">{data.ifMoney && "$"}{isUser ? userss : null}</span>
+             <span className="counter">{data.ifMoney && "$"}{isProducts ? productss : null}</span>
              <span className="link">{data.link}</span>
              </div>
         <div className="right">
