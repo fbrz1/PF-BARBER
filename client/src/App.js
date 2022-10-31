@@ -10,7 +10,7 @@ import Register from "./components/Register/Register.jsx";
 import LoginUser from "./components/LoginUser/LoginUser";
 import { CartContext } from "./components/Shopping/ShoppingCart";
 import { getDBUser } from "./redux/actions";
-import Stars from "./components/Score/stars";
+import Score from "./components/Score/score";
 
 import HomeNavBar from "./components/HomeNavBar/HomeNavBar";
 
@@ -72,7 +72,7 @@ function App() {
         <ItemCart />
       </Route>
       <Route exact path="/rating">
-        <Stars />
+        <Score />
       </Route>
       <Route exact path="/useredit">
         <UserEdit />

@@ -15,6 +15,7 @@ import {
   delFromCart,
   getLocalStorage,
   getDBCart,
+  getDBUser,
 } from "../../redux/actions";
 import SearchBar from "../SearchBar/SearchBar.jsx";
 import { Link } from "react-router-dom";

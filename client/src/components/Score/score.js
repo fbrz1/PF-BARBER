@@ -1,22 +1,23 @@
 import React from "react";
 import { getProductsDetail, updateRating } from "../../redux/actions";
 import { useDispatch, useSelector } from "react-redux";
-import Rating from "@mui/material/Rating";
-import { Button } from "reactstrap";
+import { Rating } from "@mui/material";
+/* import { Button } from "reactstrap";
 import Container from "@material-ui/core/Container";
 import { Box, Paper } from "@material-ui/core";
-import { Remove, Add, Clear } from "@material-ui/icons";
+import { Remove, Add, Clear } from "@material-ui/icons"; */
 
 const Score = () => {
   const dispatch = useDispatch();
   //const [score, setScore] = useState();
 
   const product = useSelector((state) => state.detail);
+  const userId = useSelector((state) => state.user.id);
   const setScore = (newscore) => {
     dispatch(
       updateRating({
         productId: product.id,
-        userId: 5, // Hay que cambiar esto.
+        userId, // Hay que cambiar esto.
         score: newscore,
       })
     );
