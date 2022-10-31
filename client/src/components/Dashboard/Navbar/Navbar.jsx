@@ -20,7 +20,7 @@ const NavbarDash = () => {
 
                     <div className='items' >
                         <img
-                            src="https://media.revistavanityfair.es/photos/60e85a8f9bf55ca1055acb9d/master/pass/14521.jpg"
+                            src="https://i.pinimg.com/236x/2f/e8/18/2fe818fcdfc224267544eb180d584cbd.jpg"
                             alt="avatar"
                             className='avatar'
 
