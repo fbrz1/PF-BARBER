@@ -37,21 +37,18 @@ const Ecommerce = ({
   getLocalStorage,
   getDBCart,
 }) => {
-  const {
-    addItemToCart,
-    subtractItemToCart,
-    deleteItemToCart,
-    isLogueado,
-    logIn,
-    SignOff,
-  } = useContext(CartContext);
+  let { userId, addItemToCart, subtractItemToCart, deleteItemToCart } =
+    useContext(CartContext);
+
   const [state, setState] = useState(true);
   useEffect(() => {
     if (state) {
       setState(false);
       getProducts();
-      if (isLogueado) getDBCart(1);
-      else getLocalStorage();
+      if (userId) {
+        getDBCart(userId);
+        getDBUser(userId);
+      } else getLocalStorage();
     }
   }, [state]);
 
@@ -207,15 +204,20 @@ const Ecommerce = ({
             </Row>
           </Form>
           {/* <div className={s.selectFilterSort}>
+        <button id="All" name="All" value="default" onClick={quality => handleQuality(quality)}>All</button>
+        <button id="Premium" name="Premium" value="Premium" onClick={quality => handleQuality(quality)}> Premium</button>
+        <button id="Basic" name="Basic" value="Basic" onClick={quality => handleQuality(quality)}>Basic</button>
+
+        {/* <SearchBar setCurrentPage={setCurrentPage}/> */}
+
+          {/* price sort */}
+          {/*     <div className={s.selectFilterSort}>
           <label>Price </label>
-          <select className={s.select} onChange={(sort) => handleSort(sort)}>
-            <option hidden value="">
-              ⇅
-            </option>
-            <option value="high">+</option>
-            <option value="lower">-</option>
-          </select>
-      */}
+          <select className={s.select} onChange={sort => handleSort(sort)}>
+            <option hidden value=''>⇅</option>
+            <option value='high'>+</option>
+            <option value='lower'>-</option>
+          </select> */}
           {/* filter anidado */}
           {/*<UncontrolledDropdown group>
           <Button color="primary" onChange={(shop) => handleShop(shop)}>
