@@ -8,7 +8,6 @@ import { FormControl } from '@mui/material';
 import InputLabel from '@mui/material/InputLabel';
 import Input from '@mui/material/Input';
 import Sidebar from "../Sidebar/Sidebar";
-import Navbar from "../Navbar/Navbar";
 import DriveFolderUploadOutlinedIcon from "@mui/icons-material/DriveFolderUploadOutlined";
 import Box from '@mui/material/Box';
 import NativeSelect from '@mui/material/NativeSelect';
@@ -117,7 +116,7 @@ Swal.fire({
     <div className="new" >
       <Sidebar />
       <div className="newContainer">
-        <Navbar />
+     
 <img
             src={
               file

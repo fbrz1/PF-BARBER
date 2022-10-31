@@ -47,7 +47,7 @@ function Sidebar() {
                 </li>
             
                 
-                <p className="title">USER</p>
+                <p className="title">ADMIN</p>
                 <li> <AccountCircleOutlinedIcon className='icon'></AccountCircleOutlinedIcon>
                     <span>Profile</span>
                 </li>

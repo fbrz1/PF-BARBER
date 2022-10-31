@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector} from 'react-redux';
 import { useParams } from "react-router-dom";
 import Sidebar from '../Sidebar/Sidebar';
-import Navbar from '../Navbar/Navbar';
 import '../Single/Single.scss';
 import { getDBUser, updateUsers } from "../../../redux/actions";
 import Swal from 'sweetalert2'
@@ -33,7 +32,7 @@ function handleChange(e) {
       const editHandle = (e) => {
         setEdit("true")
     }
-    dispatch(updateUsers(id, input))
+    // dispatch(updateUsers(id, input))
     const saveHandle = (e) => {
         Swal.fire({
             position: 'top-center',
@@ -42,14 +41,15 @@ function handleChange(e) {
             showConfirmButton: false,
             timer: 1500
         })
-        setEdit("false")
-        setInput({
-            isAdmin : e.target.value
-        })
+    //     setEdit("false")
+    //     setInput({
+    //         isAdmin : e.target.value
+    //     })
 
-        dispatch(dispatch(getDBUser(id)))
+         dispatch(dispatch(getDBUser(id)))
+        }
 
-    }
+    // }
 
     console.log(input)
     return (
@@ -57,7 +57,6 @@ function handleChange(e) {
         <div className='single'>
             <Sidebar />
             <div className='singleContainer'> 
-                <Navbar />
                 {edit === "false"? 
                                 <div className='top'>
                                 <div className='left'>
