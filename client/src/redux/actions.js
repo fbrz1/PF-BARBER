@@ -24,7 +24,17 @@ export const CLEAR_CART = "CLEAR_CART";
 export const GET_LOCALSTORAGE = "GET_LOCALSTORAGE";
 export const GET_PAYMENTS = "GET_PAYMENTS";
 export const ADD_PROD= 'ADD_PROD';
-
+const Toast = Swal.mixin({
+  toast: true,
+  position: "bottom-end",
+  showConfirmButton: false,
+  timer: 4000,
+  timerProgressBar: true,
+  didOpen: (toast) => {
+    toast.addEventListener("mouseenter", Swal.stopTimer);
+    toast.addEventListener("mouseleave", Swal.resumeTimer);
+  },
+});
 
 // export const SORT_SCORE ="SORT_SCORE";
 // export const SCORE_LOWER = "SCORE_LOWER"
@@ -140,19 +150,39 @@ export function deleteUsers(users, errorCallback) {
     }
   };
 }
-export function updateUsers(id, users) {
+// export function updateUsers(id, users) {
+//   return async (dispatch) => {
+//     try {
+//       const response = await axios.put(`/users/${id}`, users); //falta, se agregara..volver a revisar
+//       if (response?.data) {
+//         return dispatch({
+//           type: UPDATE_USERS,
+//           payload: response.data,
+//         });
+//         //dispatch(getProducts());
+//       }
+//     } catch (error) {
+//       console.log(error);
+//     }
+//   };
+// }
+export function updateUsers(users, showDialog) {
   return async (dispatch) => {
     try {
-      const response = await axios.put(`/users/${id}`, users); //falta, se agregara..volver a revisar
-      if (response?.data) {
-        return dispatch({
-          type: UPDATE_USERS,
-          payload: response.data,
+      const response = await axios.put(`/users/${users.id}`, users); //LISTO, NO MODIFICAR
+      if (showDialog) {
+        Toast.fire({
+          icon: "success",
+          title: response.data,
         });
-        //dispatch(getProducts());
       }
-    } catch (error) {
-      console.log(error);
+      return true;
+    } catch ({ response }) {
+      Toast.fire({
+        icon: "warning",
+        title: response.data,
+      });
+      return false;
     }
   };
 }
