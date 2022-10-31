@@ -11,7 +11,7 @@ import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import { Link } from 'react-router-dom';
 import { useEffect } from 'react';
-import { deleteProducts, getProducts } from '../../../redux/actions';
+import { updateProducts, getProducts } from '../../../redux/actions';
 import img from "./img/star.png";
 import Swal from "sweetalert2";
 
@@ -26,7 +26,7 @@ let id
   let handleEdit = (e) =>{
     console.log(e.target.value)
   }
-  let handleDelete = (e) => {
+  let handleDelete = (id, product) => {
     Swal.fire({
       title: 'Are you sure?',
       text: "You won't be able to revert this!",
@@ -42,7 +42,8 @@ let id
           'Your file has been deleted.',
           'success'
         )
-        dispatch(deleteProducts(e))
+        product.isActive = false
+        dispatch(updateProducts(id, product))
       }
       getProducts()
       getProducts()
@@ -101,7 +102,7 @@ let id
                 </TableCell>
                 <TableCell className='tableCell'>
               
-                <button onClick= {({id = row.id}) => handleDelete(id)} class='viewButtonRojo'>Delete</button>
+                <button onClick= {({id = row.id}) => handleDelete(id, row)} class='viewButtonRojo'>Delete</button>
              
               
                 </TableCell>
