@@ -64,7 +64,7 @@
   .contenedor{
     display:flex;
     justify-content: space-between;
-    background-color: #699399;
+    background-color: #6363633c;
     height: 400px;
     padding: 20px;
     border-radius: 25px;
@@ -101,4 +101,11 @@
   top: 35%;
  
 }
+  .btncarrito{
+    position: absolute;
+    margin-top: 10px;
+    left: 2%;
+
+  }
+  
   

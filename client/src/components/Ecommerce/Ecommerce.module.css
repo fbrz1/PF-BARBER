@@ -38,6 +38,7 @@
 }
 
 .productInfo {
+
   text-transform: uppercase;
   font-weight: 100;
   font-family: Montserrat;
@@ -80,8 +81,10 @@ select::-ms-expand {
   display: none;
 }
 
+
 .button {
   display: inline-block;
+  margin-bottom: 5px;
   margin-top: 10px;
   margin-left: 30px;
   padding: 10px 0;
