@@ -51,6 +51,14 @@ router.put("/:id", async (req, res) => {
     res.status(404).send(error.message);
   }
 });
+router.delete('/:id', async (req, res) => {
+  try {
+    const deletedProduct = await dbDeleteUser(req.params.id)
+    res.status(200).send(deletedProduct);
+  } catch (error) {
+    res.status(404).send(error.message);
+  }
+});
 
 router.use('/', addressController);
 

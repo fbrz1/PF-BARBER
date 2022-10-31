@@ -4,7 +4,7 @@ import { userColumns} from "./datatablesource";
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from 'react-redux';
-import { getUsers } from '../../../redux/actions';
+import { getUsers, deleteUsers } from '../../../redux/actions';
 
 const Datatable = () => {
   const dispatch = useDispatch()
@@ -19,7 +19,8 @@ const Datatable = () => {
   }, [])
 
   const handleDelete = (id) => {
-    setData(data.filter((item) => item.id !== id));
+    dispatch(deleteUsers(id))
+    console.log(id)
   };
 
   const actionColumn = [

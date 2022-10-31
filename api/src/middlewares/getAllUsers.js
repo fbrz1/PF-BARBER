@@ -4,12 +4,20 @@ const { Op } = require("sequelize");
 
 const OBJUsers = [
   {
-    name: "sakura",
+    name: "sakussra",
     lastname: "kinomoto",
     email: "kinomoto@gmail.com",
     user: "sakurachan",
     password: "123456",
     phone: "57-777-3301329"
+  },
+  {
+    name: "sakuasra",
+    lastname: "kinosasdmoto",
+    email: "kinasdasdomoto@gmail.com",
+    user: "sakuasdsadrachan",
+    password: "1232323456",
+    phone: "57-237-3301329"
   },
 ];
 

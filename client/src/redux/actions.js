@@ -69,10 +69,10 @@ export function updateProducts(id, product) {
     }
   };
 }
-export function deleteProducts(product, errorCallback) {
+export function deleteProducts(id, errorCallback) {
   return async (dispatch) => {
     try {
-      const response = await axios.delete(`/products/${product.id}`); //chequeada con yei-barbi
+      const response = await axios.delete(`/products/${id}`); //chequeada con yei-barbi
       return response?.data
     } catch (error) {
       errorCallback && errorCallback(error);
@@ -127,7 +127,7 @@ export function getUsers(errorCallback) {
 export function deleteUsers(users, errorCallback) {
   return async (dispatch) => {
     try {
-      const response = await axios.delete(`/users/${users.id}`); //falta, se agregara..volver a revisar
+      const response = await axios.delete(`/users/${users}`); //falta, se agregara..volver a revisar
       if (response?.data) {
         return dispatch({
           type: DELETE_USERS,
@@ -140,10 +140,10 @@ export function deleteUsers(users, errorCallback) {
     }
   };
 }
-export function updateUsers(users, errorCallback) {
+export function updateUsers(id, users) {
   return async (dispatch) => {
     try {
-      const response = await axios.put(`/users/${users.id}`, users); //falta, se agregara..volver a revisar
+      const response = await axios.put(`/users/${id}`, users); //falta, se agregara..volver a revisar
       if (response?.data) {
         return dispatch({
           type: UPDATE_USERS,
@@ -152,7 +152,7 @@ export function updateUsers(users, errorCallback) {
         //dispatch(getProducts());
       }
     } catch (error) {
-      errorCallback && errorCallback(error);
+      console.log(error);
     }
   };
 }
