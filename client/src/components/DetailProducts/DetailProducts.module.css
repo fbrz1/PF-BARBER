@@ -66,10 +66,10 @@
   .quality{
     text-transform: uppercase;
     font-family: "Anton&family";
-    position: relative;
-    margin-top: 10px;
+    position: absolute;
+    margin-top: 35px;
     text-align: left;
-    right: -360px;
+    right: 426px;
   }
   .img{
     margin-top: 10px;
