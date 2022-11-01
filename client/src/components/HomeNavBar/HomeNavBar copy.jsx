@@ -44,7 +44,7 @@ export default function HomeNavBar({ user }) {
                  </Link>
                  </Navbar.Brand>
 
-                                <span className={styles.username}>{userId ? " Welcome " + Object.keys(user).length ? ` ${user.username}`  : "" + " 👋" : "Henry Barber"}</span>
+                                <span className={styles.username}>{userId ? " Welcome " + Object.keys(user).length ? ` ${user.username}`  : "" + " 👋" : "Henry Barber 👋"}</span>
                                 
 
 

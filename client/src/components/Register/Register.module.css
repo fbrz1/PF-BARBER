@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Caveat&family=Indie+Flower&family=Noto+Sans:wght@200&display=swap");
 
 .background {
-  background-image: url("design.jfif");
+  background-image: url("background.png");
   background-repeat: no-repeat;
   background-size: cover;
   position: absolute;
