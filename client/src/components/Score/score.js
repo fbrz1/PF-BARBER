@@ -1,7 +1,7 @@
 import React from "react";
 import { getProductsDetail, updateRating } from "../../redux/actions";
 import { useDispatch, useSelector } from "react-redux";
-import { Rating } from "@mui/material";
+import { Rating } from "@material-ui/lab";
 /* import { Button } from "reactstrap";
 import Container from "@material-ui/core/Container";
 import { Box, Paper } from "@material-ui/core";
