@@ -117,12 +117,19 @@ function DetailProduct({ match }) {
             <div>
               <img src={product.image} alt={product.image} className={s.img} />
             </div>
-            <div className={s.columna}>
+            <div className={s.columna}> 
               <h3 className={s.quality}>QUALITY: {product.quality}</h3>
               <h3 className={s.quality}>SCORE: {product.score}</h3>
               {/* <h3 className={s.score}>SCORE: { <Score score={product.score}/>}</h3> */}
-             
+          
+
+
+          
+            <div className={s.quantity}>
+              <h3>Quantity: {productInCar.quantity}</h3>
+            </div>
               <div className={s.btncarrito}>
+             
         
         {productInCar ? (
           <span className={s.btnDelete}>
@@ -194,11 +201,7 @@ function DetailProduct({ match }) {
             </span>
             
           ) : null}
-          {productInCar ? (
-            <div className={s.quantity}>
-              <h3>Quantity: {productInCar.quantity}</h3>
-            </div>
-          ) : null}
+          
         
 
         {Object.keys(pay).length ? (
@@ -234,8 +237,9 @@ function DetailProduct({ match }) {
             BUY NOW
           </button>
         ) : (
-          <div className={s.inisec}>
-            <Link to="/shop">
+       <div className={s.inisec}>
+       
+            <Link to="/login">
               {" "}
               <Button color="dark" outline className={s.inicio}>
                 Inicia sesión para comprar
@@ -243,8 +247,11 @@ function DetailProduct({ match }) {
             </Link>
           </div>
         )}
+           <div className={s.scoreSubmit}>
+       <Score></Score>
+       </div>
       </div>
-            </div>
+            </div> 
 
 
             {console.log("productInCart", productInCar)}
@@ -254,12 +261,13 @@ function DetailProduct({ match }) {
       <br>
       </br>
        </div>
-       <Score></Score>
-       <h2>Featured Products</h2>
+       <br>
+       </br>
        
-      
-      <div>
-      <Carrusel/>
+       <h2>Featured Products: </h2>
+              
+       <div>
+      <Carrusel/> 
       </div>
     </div>
   );

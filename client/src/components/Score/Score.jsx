@@ -51,7 +51,7 @@ let scorcito = (idProduct, score )=>{
 
   return (
     <div>
-    <select name="score" id="score" onChange={(e) => handleChange(e)}>
+    <select  name="score" id="score" onChange={(e) => handleChange(e)}>
     <option hidden value="">select score</option>
         <option value={1} name="score">⭐️</option>
         <option value={2} name="score">⭐️⭐️</option>
@@ -59,7 +59,7 @@ let scorcito = (idProduct, score )=>{
         <option value={4} name="score">⭐️⭐️⭐️⭐️</option>
         <option value={5} name="score">⭐️⭐️⭐️⭐️⭐️</option>
     </select>
-    <button type="submit" onClick={(e) => saveHandle(e)}>Submit</button>
+    <button class="btn btn-dark"  type="submit" onClick={(e) => saveHandle(e)}>Submit</button>
     </div>
   )
 }

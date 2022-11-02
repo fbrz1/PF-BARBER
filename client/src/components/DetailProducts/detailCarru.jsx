@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { useSelector } from "react-redux";
 import "bootstrap/dist/css/bootstrap.min.css";
-import  "./detailCarru.css"
+import  "./detailCarru.module.css"
 import {
   Carousel,
   CarouselItem,
@@ -232,16 +232,18 @@ class Carrusel extends Component {
         <CarouselItem
           onExiting={this.onExiting}
           onExited={this.onExited}
-          key={item}
+          key={item.id}
         >
           <div className="detCarrContainer">
-            <a href={`/product/${item.id}`}>
+            <a className="dta" href={`/product/${item.id}`}>
               
-          <img src={item.image} alt={item.altText} with="50%" height="250px" />
+          <img className="dtCarrImg" src={item.image} alt={item.altText} with="50%" height="350px"   />
             </a>
-          <h3 >{item.name}</h3>
+            <div className="dtCarrDatos">
+          <h3 className="dtCarrName" >{item.name}</h3>
           <h4 >${item.price}</h4>
           <h5 >Quality: {item.quality}</h5>
+          </div>
           </div>
           
           <CarouselCaption

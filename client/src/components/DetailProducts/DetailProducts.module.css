@@ -1,24 +1,19 @@
 @import url("https://fonts.googleapis.com/css2?family=Anton&family=Quicksand:wght@300&display=swap");
 
-.background {
+  .background{
   background-image: url(../Home/background.png);
   background-repeat: no-repeat;
   background-size: cover;
-
+  position: absolute;
+  margin: 0% 0%;
   text-align: center;
 
   background-position-x: center;
   width: 100%;
-  height: 100%;
-  /*   width: 100%;
-  height: 100%;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: 100% 100%;
-  margin: 0% 0%;
-  text-align: center;
-  background-position-x: center; */
+  height: 140%;
 }
+ 
+
 
 .button {
   display: inline-block;
@@ -54,7 +49,7 @@
 .price {
   text-transform: uppercase;
   font-family: "Anton&family";
-  margin-left: -500px;
+  margin-left: -300px;
 
   margin-top: 35px;
   left: 2%;
@@ -62,7 +57,7 @@
 .quality {
   text-transform: uppercase;
   font-family: "Anton&family";
-
+  margin-right: 40px;
   margin-top: 35px;
   text-align: left;
   right: 426px;
@@ -95,51 +90,84 @@
   padding-top: 10px;
   padding-right: 20px;
   padding-bottom: 10px;
-
+  font-family: "Anton&fanily";
   box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
     rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
     rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 .score {
+  display: flex;
+  left: 50px;
+  bottom: 30px;
   margin-top: 2px;
 
-  right: 410px;
-  font-family: "Anton&family";
-  text-align: left;
+     font-family: "Anton&family";
+ /*  text-align: left; */
 }
 .inisec {
   font-family: "Anton&family";
+  display: flex;
+  position: relative;
+  bottom:-50px;
+  left: 150px;
 }
 .seMore {
   position: absolute;
   bottom: 100px;
   right: 43%;
 }
-.quantity {
-  font-family: "Anton&family";
-  text-transform: uppercase;
-}
 
-.columna {
+/* .columna {
+  position: relative;
   display: flex;
   flex-direction: column;
+  left: 0px;
+} */
+
+
+.quantity {
+  text-transform: uppercase;
+  display: flex;
+  position: relative;
+  left: 0px;
+  bottom: 140px;
+  font-family: "Anton&family";
+  
+  
+
+  
 }
 
 .btncarrito {
-  top: 19%;
-  right: 4.5%;
+  font-family: "Anton&family";
+  left: 10px;
   display: flex;
+  position: relative;
+  bottom: 110px;
+
+  
 }
-.quantity {
+/* .quantity {
   top: 0%;
   left: -235px;
-}
+} */
 .btnSubstract {
-  margin: 3px;
+  margin-left: 2px;
+  bottom: 30px;
   top: 6rem;
-  right: 250px;
+  right: 300px;
 }
 .btnAdd {
+  margin-left: 2px;
+  bottom: 30px;
   top: 6rem;
-  right: 250px;
+  right: 300px;
 }
+
+.scoreSubmit{
+  display: flex;
+  position: relative;
+ 
+ bottom: 158px;
+  right: 190px;
+};
