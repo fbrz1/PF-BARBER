@@ -114,18 +114,21 @@ const Ecommerce = ({
 
         <SearchBar setCurrentPage={setCurrentPage} />
         {/* buttons filter Quality */}
-        <button id="All" name="All" value="default" onClick={quality => handleQuality(quality)}>All</button>
-        <button id="Premium" name="Premium" value="Premium" onClick={quality => handleQuality(quality)}> Premium</button>
-        <button id="Basic" name="Basic" value="Basic" onClick={quality => handleQuality(quality)}>Basic</button>
-
+       <div className={s.contenedores}>
+        <div className={s.btnsAllPB}>
+        <button class="btn btn-dark"  id="All" name="All" value="default" onClick={quality => handleQuality(quality)}>All</button>
+        <button class="btn btn-dark"   id="Premium" name="Premium" value="Premium" onClick={quality => handleQuality(quality)}> Premium</button>
+        <button class="btn btn-dark"   id="Basic" name="Basic" value="Basic" onClick={quality => handleQuality(quality)}>Basic</button>
+        </div>
+        
         {/* <SearchBar setCurrentPage={setCurrentPage}/> */}
 
 
 
 
         {/* price sort */}
-        <div >
-          <label>Price </label>
+        <div className={s.Price} >
+          <label  className={s.labelPrice}>Price </label>
           <select className={s.select} onChange={sort => handleSort(sort)}>
             <option hidden value=''>⇅</option>
             <option value='high'>+</option>
@@ -133,7 +136,7 @@ const Ecommerce = ({
           </select>
 
           {/* filter anidado */}
-          <label>Category</label>
+          <label className={s.labelCategory}>Category</label>
           <select className={s.select} onChange={shop => handleShop(shop)}>
             <option hidden value="all">Shop</option>
             <option value="all">All</option>
@@ -143,7 +146,7 @@ const Ecommerce = ({
 
         </div><br />
 
-
+        </div>
 
 
 

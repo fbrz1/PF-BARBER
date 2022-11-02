@@ -133,3 +133,21 @@ select::-ms-expand {
 .select {
   width: 15px;
 }
+
+  .btnsAllPB{
+  
+  justify-content: space-between;
+  }
+
+  .labelPrice{
+    font-weight: bolder;
+  };
+
+  .labelCategory{
+    font-weight: bolder;
+  };
+
+  .ordenadores{
+    display: flex;
+    justify-content: center;
+  }
