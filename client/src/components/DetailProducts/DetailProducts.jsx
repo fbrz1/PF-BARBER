@@ -11,9 +11,9 @@ import {
 } from "../../redux/actions";
 import { CartContext } from "../Shopping/ShoppingCart";
 import { Button } from "reactstrap";
-
+import { useHistory } from "react-router-dom";
+import Score from '../Score/score'
 import s from "./DetailProducts.module.css";
-
 // import styles from '../DetailProducts/DetailProducts.module.css';
 
 function DetailProduct({ match }) {
@@ -26,6 +26,7 @@ function DetailProduct({ match }) {
   const product = useSelector((state) => state.detail);
   const cart = useSelector((state) => state.cart);
   let pay = useSelector((state) => state.payMercadoPago);
+  const history = useHistory()
 
   function updateProductInCar() {
     return cart.find(
@@ -85,13 +86,31 @@ function DetailProduct({ match }) {
       </div>
  */}
         {/* Card */}
-        <div>
+          <div className={s.contenedor}>
+            <div>
+              <h3 className={s.name}>{product.name}</h3>
+              <h3 className={s.price}>Price:${product.price}</h3>
+            </div>
+            <div>
+              <img src={product.image} alt={product.image} className={s.img} />
+            </div>
+            <div>
+              <h3 className={s.quality}>QUALITY: {product.quality}</h3>
+              <h3 className={s.score}>SCORE: { <Score score={product.score}/>}</h3>
+            </div>
+
+            {console.log("productInCart", productInCar)}
+          
+          <div className={s.btncarrito}>
+        <div >
           {productInCar ? (
+            <span className="btnDelete">
             <button
               class="btn btn-dark"
               onClick={async (e) => {
                 e.preventDefault();
                 await deleteItemToCart(product);
+                history.push('/shop')
               }}
             >
               {" "}
@@ -106,25 +125,10 @@ function DetailProduct({ match }) {
                 <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1H.5zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zM7.354 5.646 8.5 6.793l1.146-1.147a.5.5 0 0 1 .708.708L9.207 7.5l1.147 1.146a.5.5 0 0 1-.708.708L8.5 8.207 7.354 9.354a.5.5 0 1 1-.708-.708L7.793 7.5 6.646 6.354a.5.5 0 1 1 .708-.708z" />
               </svg>
             </button>
+            </span>
           ) : null}
-          <div className={s.contenedor}>
-            <div>
-              <h3 className={s.name}>{product.name}</h3>
-              <h3 className={s.price}>Price:${product.price}</h3>
-            </div>
-            <div>
-              <img src={product.image} alt={product.image} className={s.img} />
-            </div>
-            <div>
-              <h3 className={s.quality}>QUALITY:{product.quality}</h3>
-              <h3 className={s.score}>SCORE: {product.score}</h3>
-            </div>
-
-            {console.log("productInCart", productInCar)}
-          </div>
-          <div className={s.btncarrito}>
             {productInCar ? (
-              <div className={s.btnSubstract}>
+              <span className={s.btnSubstract}>
                 <button
                   class="btn btn-dark"
                   onClick={async (e) => {
@@ -143,10 +147,10 @@ function DetailProduct({ match }) {
                     <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1H.5zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zM6.5 7h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1 0-1z" />
                   </svg>{" "}
                 </button>
-              </div>
+              </span>
             ) : null}
             {productInCar ? (
-              <div className={s.btn}>
+              <span className={s.btnAdd}>
                 <button
                   class="btn btn-dark"
                   onClick={async (e) => {
@@ -166,7 +170,8 @@ function DetailProduct({ match }) {
                     <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1H.5zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zM9 5.5V7h1.5a.5.5 0 0 1 0 1H9v1.5a.5.5 0 0 1-1 0V8H6.5a.5.5 0 0 1 0-1H8V5.5a.5.5 0 0 1 1 0z" />
                   </svg>{" "}
                 </button>
-              </div>
+              </span>
+              
             ) : null}
             {productInCar ? (
               <div className={s.quantity}>
@@ -218,6 +223,7 @@ function DetailProduct({ match }) {
             </div>
           )}
         </div>
+      </div>
       </div>
     </div>
   );

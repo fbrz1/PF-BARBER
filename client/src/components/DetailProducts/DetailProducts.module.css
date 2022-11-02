@@ -2,14 +2,23 @@
 
 .background{
   background-image: url(../Home/background.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+  margin: 0% 0%;
+  text-align: center;
+
+  background-position-x: center;
   width: 100%;
+  height: 100%;
+/*   width: 100%;
   height: 100%;
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: 100% 100%;
   margin: 0% 0%;
   text-align: center;
-  background-position-x: center;
+  background-position-x: center; */
  
 }
 
@@ -35,75 +44,81 @@
     transition: 500ms;
   }
   .name{
+    overflow: auto;
     margin-top: 15px;
     font-size: 50px;
     text-transform: uppercase;
     color:rgb(48, 48, 110);
-    
-    font-family: "Times New Roman", Times, serif;
+    overflow: hidden;
+    font-family: "Anton&family";
     text-align: start;
-    width: 300px;
+    width: 650px;
     
   }
   .price{
     text-transform: uppercase;
-    font-family: "Times New Roman", Times, serif;
+    font-family: "Anton&family";
     position: absolute;
-    margin-top: 5px;
+    margin-top: 35px;
     left: 2%;
 
   }
   .quality{
     text-transform: uppercase;
-    font-family: "Times New Roman", Times, serif;
-    position: relative;
-    margin-top: 10px;
+    font-family: "Anton&family";
+    position: absolute;
+    margin-top: 35px;
     text-align: left;
-    right: 49px;
+    right: 426px;
   }
   .img{
-    margin-top: 3px;
-    padding: 20px;
+    margin-top: 10px;
+     padding: 4.5px; 
     border-radius: 25px;
     border:5px;
-    height: 300px;
+    height: 340px;
     position:absolute;
-    right: 600px;
+    right: 50%;
+    box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
     
   }
 
   .inicio{
     text-transform: uppercase;
-    margin-top: 15px;
+    margin-top: -35px;
     margin-bottom: 15px;
+    margin-right: 100px;
   }
   .contenedor{
     display:flex;
     justify-content: space-between;
-    background-color:rgba(255, 255, 255, 0.053);
+    background-color:rgba(255, 255, 255, 0.889);
     height: 400px;
     padding: 20px;
     border-radius: 25px;
-    border: 5px solid white;
-    margin-top: 5px;
+    border: 5px solid rgba(157, 154, 154, 0);
+    margin-top: 15%;
     padding-left: 20px;
     padding-top: 10px;
     padding-right: 20px;
     padding-bottom: 10px;
+    
+
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
   }
   .score{
     margin-top: 2px;
     position:absolute;
-    right:15%;
-    font-family: "Times New Roman", Times, serif;
+    right:410px;
+    font-family: "Anton&family";
     text-align: left;
     
   }
 .inisec{
-  position: absolute;
-  font-family: cursive;
-  top:60%;
-  right: 3%;
+  position: relative;
+  font-family: "Anton&family";
+  top:40%;
+  right: 45%;
 }
 .seMore{
   position:absolute;
@@ -111,33 +126,41 @@
   right: 43%;
 }
 .quantity{
-  font-family: "Times New Roman", Times, serif;
+  font-family: "Anton&family";
   text-transform: uppercase;
   position: absolute;
     top:-30px;
-    left:-200px;
+   left:-150px;
+   right: -50px; 
  
 }
   .btncarrito{
-    position: absolute;
-    top: 40%;
-    right: 2%;
+    position: relative;
+    top: 25%;
+    right: 4.5%;
 
   }
   .quantity{
     position: relative;
     top:0%;
-    left:-200px;
+    left:-235px;
   }
- /*  .btnSubstract{
+   .btnSubstract{
     position: relative;
-    top:60%;
-    right:500%
+    margin: 3px;
+    top: 6rem;
+    right: 250px;
   }
   .btnAdd{
-    position:relative;
-    top:30%;
-    right: 350%;
-  } */
-  
+    position: relative;
+    top:6rem;
+    right: 250px;
+  } 
+  .btnDelete{
+    position: absolute;
+   margin-top: 10rem;
+    
+    
+
+  }
   

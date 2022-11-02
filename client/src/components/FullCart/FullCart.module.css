@@ -1,18 +1,18 @@
-@import url('https://fonts.googleapis.com/css2?family=Caveat&family=Indie+Flower&family=Noto+Sans:wght@200&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Caveat&family=Indie+Flower&family=Noto+Sans:wght@200&display=swap');
 
 .background{
     background-image: url('cartBackground.jpg');
 }
 
 
-.box{
+ .box{
     margin-top: 3%;
 	text-align: center;
 	display: inline-block;
 	vertical-align: top;
-	background-color: #f0f0f067;
-	height:20em;
-	width: 90%;
+	background-color: #98949467;
+	height:40em;
+	width: 98%;
 	display:-webkit-box;
 	display:-ms-flexbox;
     position:relative;
@@ -30,19 +30,18 @@
 
 .title{
     font-family: 'Quicksand', sans-serif;
+    text-transform: uppercase;
     font-weight: bold;
-}
+} */
 
-.container{
-    max-width:95%;
-    width:90%;
+ /* .container{
+    max-width:100%;
+    width:100%;
     list-style-type:none;
-    margin:20px auto;
+    margin:20px 2px 2px;
   
-    padding-right: 2rem;
+    padding-right: 1%;
     background-color:#eee;
-
-    /*Flexbox setup*/
     display: flex;
     flex-flow: row wrap;
     justify-content: space-between;
@@ -54,47 +53,42 @@
     max-width:95%;
     width:1380px;
     list-style-type:none;
-    margin:20px auto;
+    margin:20px 2px 2px 2px;
 
     background-color:#eee;
-
-    /*Flexbox setup*/
     display: flex;
     flex-flow: row wrap;
     justify-content: space-between;
     align-items: center;
-
-
-
-}
+} 
 
 .tamanoimg{
     max-width:150px;
     max-height: 100px;
-    margin-right: -4rem;
-    margin-left: -4rem;
+    margin-right: 20%;
+ 
+} 
 
-    
-}
+/* .stock{
+  margin-left: 5rem;
+} 
 
-.text{
+ .text{
     border-collapse: collapse;
-    
     width: 150px;
-    
-    
-    
-}
-h5{
+    margin-right: 40px;
+} */
+
+/* h5{
     padding-left: 2rem;
-}
+} 
 
 .price{
     margin-left: 3rem;
 
 
-}
-.button {
+} */
+/* .button {
     display: inline-block;
     margin-top: 10px;
     padding: 10px 0;
@@ -113,4 +107,51 @@ h5{
   .button:hover {
     background-color: #08a1b1;
     transition: 500ms;
-  }
+  }  */
+  .background{
+    background-image: url(../Home/background.png);
+   
+}
+
+.tabla{
+    width: 100%;
+   
+    
+}
+  .tamanoimg{
+    max-width:150px;
+    max-height: 100px;
+    margin-right: 20%;
+    margin-left: 20%;
+    border-radius: 25%;
+
+ 
+}
+.text{
+    text-transform: uppercase;
+   
+    width: 150px;
+    margin-right: 40px;
+}
+.title{
+    font-family: 'Quicksand', sans-serif;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-bottom: 5%;
+} 
+.elementosTabla{
+    background-color: grey;
+}
+.tbodyStilos{
+    background-color: rgb(229, 221, 221);
+    bottom: 45%;
+}
+.Total{
+    text-transform: uppercase;
+    font-size: 20px;
+    margin-right: -79%;
+}
+.bottonInicio{
+    text-decoration: none;
+    color:white;
+}
