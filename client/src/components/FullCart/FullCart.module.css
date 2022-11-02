@@ -115,29 +115,31 @@
 
 .tabla{
     width: 100%;
+    margin-top: 15px;
    
     
 }
   .tamanoimg{
     max-width:150px;
     max-height: 100px;
+    margin-top:5px;
+    margin-bottom: 5px;
     margin-right: 20%;
     margin-left: 20%;
     border-radius: 25%;
-
- 
 }
 .text{
     text-transform: uppercase;
-   
     width: 150px;
     margin-right: 40px;
 }
 .title{
-    font-family: 'Quicksand', sans-serif;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 300%;
     text-transform: uppercase;
-    font-weight: bold;
-    margin-bottom: 5%;
+    margin-bottom: 3%;
+    font-weight:bolder;
+    
 } 
 .elementosTabla{
     background-color: grey;
@@ -146,6 +148,9 @@
     background-color: rgb(229, 221, 221);
     bottom: 45%;
 }
+.botones{
+    margin:10px;
+  }
 .Total{
     text-transform: uppercase;
     font-size: 20px;
@@ -154,4 +159,8 @@
 .bottonInicio{
     text-decoration: none;
     color:white;
+}
+
+.cualiti{
+    text-transform: uppercase;
 }
