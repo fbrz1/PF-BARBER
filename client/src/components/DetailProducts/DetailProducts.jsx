@@ -257,8 +257,9 @@ start()
             GO PAY
           </a>
         ) : userId ? (
+          <div className={s.button}>
           <button
-            className={s.button}
+            
             class = "btn btn-dark" 
             onClick={(e) => {
               e.preventDefault();
@@ -280,6 +281,7 @@ start()
           >
             BUY NOW
           </button>
+          </div>
         ) : (
        <div className={s.inisec}>
        
@@ -310,6 +312,10 @@ start()
        
        <h2>Featured Products: </h2>
 
+<br>
+</br>
+<br>
+</br>
 
         {
 
