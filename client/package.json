@@ -20,7 +20,7 @@
     "bcrypt": "^5.1.0",
     "bcryptjs": "^2.4.3",
     "bcryptjs-react": "^2.4.6",
-    "bootstrap": "^5.2.2",
+    "bootstrap": "^4.6.2",
     "browserify-fs": "^1.0.0",
     "browserify-zlib": "^0.2.0",
     "buffer": "^6.0.3",

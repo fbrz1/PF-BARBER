@@ -37,6 +37,8 @@ function DetailProduct({ match }) {
   }
   const [productInCar, setProducInCar] = useState(updateProductInCar());
 
+  
+
   useEffect(() => {
     if (update) {
       dispatch(getProductsDetail(id)); // accedo al id del detalle
@@ -74,7 +76,7 @@ function DetailProduct({ match }) {
   }, []);
 
 //-------carrusel
-  let items = document.querySelectorAll('.carousel .carousel-item')
+/*   let items = document.querySelectorAll('.carousel .carousel-item')
 
   items.forEach((el) => {
       const minPerSlide = 4
@@ -88,11 +90,49 @@ function DetailProduct({ match }) {
           el.appendChild(cloneChild.children[0])
           next = next.nextElementSibling
       }
-  })
+  }) */
+
+//----------Carrusel a manopla
+
+//LA RE CONCHA DE MI MADREEEEEEEEEEE!!!!!!!!!!!!!!!!!!
+
+/* document.addEventListener("DOMContentLoaded", function(event) {
+  console.log(document.querySelector("carrusel-items"));
+
+});
 
 
+const carrusel = document.querySelector('carrusel-items');
+console.log(carrusel)
 
+let maxScrollLeft =carrusel.scrollWidth - carrusel.clientWidth
+let intervalo = null;
+let step = 1
+const start = () => {
+  intervalo = setInterval(function (){
+    carrusel.scrollLeft = carrusel.scrollLeft + step;
+    if(carrusel.scrollLeft === maxScrollLeft){
+      step = step * -1
+    } else if(carrusel.scrollLeft === 0){
+      step = step * -1
+    }
+  }, 10);
+}
+const stop = () => {
+  clearInterval(intervalo)
 
+}
+
+carrusel.addEventListener('mouseover', () => {
+  stop()
+} )
+
+carrusel.addEventListener('mouseout', () => {
+  start()
+} );
+
+start()
+ */
 
   return (
     <div className={s.background}>
@@ -117,14 +157,24 @@ function DetailProduct({ match }) {
             <div>
               <img src={product.image} alt={product.image} className={s.img} />
             </div>
-            <div className={s.columna}>
+            <div className={s.columna}> 
               <h3 className={s.quality}>QUALITY: {product.quality}</h3>
               <h3 className={s.quality}>SCORE: {product.score}</h3>
               {/* <h3 className={s.score}>SCORE: { <Score score={product.score}/>}</h3> */}
-             
+          
+
+              <div className={s.quantity}>
+          {     
+            productInCar ? 
+             (
+              <h3>Quantity: {productInCar.quantity}</h3>
+            
+            ) : null
+              }
+              </div>
               <div className={s.btncarrito}>
-        
-        {productInCar ? (
+          <div className={s.carrBtns}>
+       {/*  {productInCar ? ( */}
           <span className={s.btnDelete}>
           <button
             class="btn btn-dark"
@@ -147,8 +197,8 @@ function DetailProduct({ match }) {
             </svg>
           </button>
         </span>
-        ) : null}
-          {productInCar ? (
+        {/* ) : null} */}
+          {/* {productInCar ? ( */}
             <span className={s.btnSubstract}>
               <button
                 class="btn btn-dark"
@@ -169,8 +219,8 @@ function DetailProduct({ match }) {
                 </svg>{" "}
               </button>
             </span>
-          ) : null}
-          {productInCar ? (
+          {/* ) : null} */}
+          {/* {productInCar ? ( */}
             <span className={s.btnAdd}>
               <button
                 class="btn btn-dark"
@@ -192,13 +242,9 @@ function DetailProduct({ match }) {
                 </svg>{" "}
               </button>
             </span>
-            
-          ) : null}
-          {productInCar ? (
-            <div className={s.quantity}>
-              <h3>Quantity: {productInCar.quantity}</h3>
             </div>
-          ) : null}
+         {/*  ) : null} */}
+          
         
 
         {Object.keys(pay).length ? (
@@ -211,8 +257,10 @@ function DetailProduct({ match }) {
             GO PAY
           </a>
         ) : userId ? (
+          <div className={s.button}>
           <button
-            className={s.button}
+            
+            class = "btn btn-dark" 
             onClick={(e) => {
               e.preventDefault();
               if (cart.length) {
@@ -233,9 +281,11 @@ function DetailProduct({ match }) {
           >
             BUY NOW
           </button>
+          </div>
         ) : (
-          <div className={s.inisec}>
-            <Link to="/shop">
+       <div className={s.inisec}>
+       
+            <Link to="/login">
               {" "}
               <Button color="dark" outline className={s.inicio}>
                 Inicia sesión para comprar
@@ -243,8 +293,11 @@ function DetailProduct({ match }) {
             </Link>
           </div>
         )}
+           <div className={s.scoreSubmit}>
+       <Score></Score>
+       </div>
       </div>
-            </div>
+            </div> 
 
 
             {console.log("productInCart", productInCar)}
@@ -254,13 +307,87 @@ function DetailProduct({ match }) {
       <br>
       </br>
        </div>
-       <Score></Score>
-       <h2>Featured Products</h2>
+       <br>
+       </br>
        
-      
-      <div>
+       <h2>Featured Products: </h2>
+
+<br>
+</br>
+<br>
+</br>
+
+        {
+
+        <div>
       <Carrusel/>
+      </div>  
+
+        }      
+
+
+
+
+
+{/* 
+      <div class="carrusel">
+        <div class="carrusel-items">
+          <div class="carrusel-item">
+            <img src="https://http2.mlstatic.com/D_NQ_NP_2X_959303-MLA51602582272_092022-F.webp" alt=""/>
+              <p> Beard Balm </p>
+          </div>
+          <div class="carrusel-item">
+            <img src="https://www.giftsandcare.com/12277-home_default_carousel/muehle-razor-gillette-fusion-vivo-series-plumtree.jpg" alt=""/>
+              <p> Mühle Razor Gillette® Fusion Vivo Series Plumtree </p>
+          </div>
+          <div class="carrusel-item">
+            <img src="https://www.giftsandcare.com/9786-large_default/maquinilla-de-afeitar-clasica-plaza-edwin-jagger-marfil.jpg" alt=""/>
+              <p> Edwin Jagger Marfil </p>
+          </div>
+          <div class="carrusel-item">
+            <img src="https://www.giftsandcare.com/14216-large_default/brosh-super-hard-gel-200gr.jpg" alt=""/>
+              <p> Brosh Super Hard Gel 200gr </p>
+          </div>
+          <div class="carrusel-item">
+            <img src="https://www.giftsandcare.com/1621-large_default/muehle-double-edge-safety-razor-r89-rose-gold-close-comb-.jpg" alt=""/>
+              <p> Mühle Double Edge Safety Razor R89 Rose Gold Close Comb </p>
+          </div>
+          <div class="carrusel-item">
+            <img src="https://www.giftsandcare.com/17239-large_default/fatip-chrome-slant-double-edge-safety-razor.jpg" alt=""/>
+              <p> Fatip Chrome Slant Double Edge Safety Razor </p>
+          </div>
+          <div class="carrusel-item">
+            <img src="https://www.giftsandcare.com/6329-large_default/brocha-de-afeitar-pelo-sintetico-roja-omega-s10018.jpg" alt=""/>
+              <p> Omega Garnet Shaving Bowl </p>
+          </div>
+          <div class="carrusel-item">
+            <img src="https://www.giftsandcare.com/16511-large_default/fatip-piccolo-gold-slant-close-open-double-edge-safety-razor.jpg" alt=""/>
+              <p> Fatip Piccolo Gold Slant Close Open Double Edge Safety Razor </p>
+          </div>
+          <div class="carrusel-item">
+            <img src="https://www.giftsandcare.com/9869-large_default/dear-barber-shave-oil-30ml.jpg" alt=""/>
+              <p> Baxter of California Shave Tonic </p>
+          </div>
+          <div class="carrusel-item">
+            <img src="https://www.giftsandcare.com/9427-large_default/aceite-pre-afeitado-barberism-captain-fawcett-50ml.jpg" alt=""/>
+              <p> Captain Fawcett Barberism Pre-Shave Oil 50ml </p>
+          </div>
+          <div class="carrusel-item">
+            <img src="https://www.giftsandcare.com/7783-large_default/hey-joe-pre-shave-oil-50ml.jpg" alt=""/>
+              <p> Hey Joe Pre Shave Oil 50ml </p>
+          </div>
+          <div class="carrusel-item">
+            <img src="https://www.giftsandcare.com/3022-large_default/piedra-de-alumbre-natural-osma-75-gr.jpg" alt=""/>
+              <p> After Shave BeardLovers </p>
+          </div>
+          <div class="carrusel-item">
+            <img src="https://www.giftsandcare.com/13418-large_default/cella-milano-bio-aloe-vera-after-shave-balm-100ml.jpg" alt=""/>
+              <p> Cella Milano Bio Aloe Vera After Shave Balm 100ml </p>
+          </div>
+        </div>
       </div>
+       */}
+      
     </div>
   );
 }
