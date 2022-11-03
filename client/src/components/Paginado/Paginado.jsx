@@ -1,10 +1,5 @@
 import React from "react";
-import {
-  Pagination,
-  PaginationItem,
-  PaginationLink,
-  className,
-} from "reactstrap";
+import { Pagination, PaginationItem, PaginationLink } from "reactstrap";
 
 export default function Paginado({ pag, setCurrentPage, max, className }) {
   //le paso las props/paramentros/estados
@@ -26,10 +21,11 @@ export default function Paginado({ pag, setCurrentPage, max, className }) {
     click.preventDefault();
     setCurrentPage(Number(click.target.value));
   }
+
   return (
     <Pagination className={className}>
       <PaginationItem>
-       
+        <PaginationLink onClick={prevPage} href="#" previous />
       </PaginationItem>
       {arreglito
         ? arreglito.map((m) => (
@@ -42,7 +38,7 @@ export default function Paginado({ pag, setCurrentPage, max, className }) {
         : "not array"}
 
       <PaginationItem>
-      
+        <PaginationLink onClick={nextPage} href="#" next />
         {/*</PaginationLink> */}
       </PaginationItem>
     </Pagination>
